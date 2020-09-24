@@ -1,12 +1,10 @@
-import React from "react"
+import React from 'react'
 
 import { default as ReduxWrapper } from './src/store'
-import { default as MaterialUiWrapper } from './src/theme'
+import { default as MaterialUiWrapper } from './src/styles/theme'
 
-export const wrapRootElement = ({ element }) => ( 
-    <ReduxWrapper>
-        <MaterialUiWrapper>
-            {element}
-        </MaterialUiWrapper>
-    </ReduxWrapper>
+export const wrapRootElement = ({ element }) => (
+  <ReduxWrapper>
+    <MaterialUiWrapper>{element}</MaterialUiWrapper>
+  </ReduxWrapper>
 )

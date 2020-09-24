@@ -1,5 +1,37 @@
-import React from "react"
+import React from 'react'
+import { connect } from 'react-redux'
 
-export default function Home() {
-  return <div>Hello world! Keryc Diaz test</div>
+import Layout from '@components/Layout'
+import SEO from '@components/seo'
+
+import { setNavigatorPosition } from '@store/actions'
+
+const useSingleton = (initializer) => {
+  React.useState(initializer)
 }
+
+const Index = ({ navigatorPosition, setNavigatorPosition }) => {
+  useSingleton(() => {
+    if (navigatorPosition !== 'is-featured') {
+      setNavigatorPosition('is-featured')
+    }
+  })
+
+  return (
+    <Layout>
+      <SEO title="All posts" />
+    </Layout>
+  )
+}
+
+const mapStateToProps = (state) => {
+  return {
+    navigatorPosition: state.reducers.navigatorPosition,
+  }
+}
+
+const mapDispatchToProps = {
+  setNavigatorPosition,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Index)
