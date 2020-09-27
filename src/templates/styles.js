@@ -14,7 +14,6 @@ export const Article = styled.div`
       letter-spacing: -.02em;
     }
     a {
-      transition: 0.3s;
       font-weight: bold;
       letter-spacing: -.02em;
       text-decoration: underline;

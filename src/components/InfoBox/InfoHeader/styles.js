@@ -24,9 +24,7 @@ export const AvatarLink = styled(Link)`
         top: 10px;
         left: 50%;
         position: absolute;
-        transition: all .5s;
         margin-left: -30px;
-        transition-timing-function: ease;
         ${InfoBox}.is-aside.open & {
             top: 0;
             left: 8%;
@@ -43,9 +41,7 @@ export const AvatarImg = styled(Avatar)`
         height: 36px;
         display: inline-block;
         overflow: hidden;
-        transition: all 0.3s;
         border-radius: 65% 75%;
-        transition-timing-function: ease;
         img {
             max-width: 100%;
         }
@@ -57,7 +53,7 @@ export const AvatarImg = styled(Avatar)`
             width: 60px;
             height: 60px;
         }
-        @media (hover: hover) {
+        :hover {
             border-radius: 75% 65%;
         }
     }
@@ -70,7 +66,6 @@ export const Title = styled.h1`
     margin: 0;
     font-size: ${theme.info.fonts.boxTitleSize}em;
     will-change: transform, left, top;
-    transition-timing-function: ease;
     small {
         display: block;
         font-size: .6em;
@@ -86,7 +81,6 @@ export const Title = styled.h1`
         font-size: ${theme.info.fonts.boxTitleSizeL}em;
         transform: translate(-50%);
         text-align: center;
-        transition: all .5s;
     }
     ${InfoBox}.is-aside.open & {
         top: ${1.9 - theme.info.fonts.boxTitleSizeL}em;

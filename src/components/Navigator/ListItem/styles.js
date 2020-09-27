@@ -6,7 +6,6 @@ import { Navigator } from '@components/Navigator/styles'
 export const ListItem = styled.li`
   ${({ theme }) => `
     margin: 0 0 .7em 0;
-    transition: height 1s;
     @media (min-width: ${theme.mediaQueryTresholds.M}px) {
         margin: 0 0 1.5rem 0;
     }
@@ -45,7 +44,6 @@ export const ListImage = styled.div`
     margin: 0;
     overflow: hidden;
     position: relative;
-    transition: all .5s;
     flex-shrink: 0;
     border-radius: 75% 65%;
     img {
@@ -60,9 +58,7 @@ export const ListImage = styled.div`
     @media (min-width: ${theme.mediaQueryTresholds.L}px) {
         width: 90px;
         height: 90px;
-        transition: all .3s;
         margin-right: .8em;
-        transition-timing-function: ease;
         ${Navigator}.is-aside & {
             width: 30px;
             height: 30px;

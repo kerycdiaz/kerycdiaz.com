@@ -180,7 +180,6 @@ export default createGlobalStyle`
   }
   a {
     background: transparent;
-    transition: 0.3s;
     font-weight: bold;
     text-decoration: none;
     text-decoration-skip: objects;

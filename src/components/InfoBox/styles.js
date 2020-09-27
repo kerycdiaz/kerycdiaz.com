@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const InfoBox = styled.aside`
-  ${({ theme }) => `  
+    ${({ theme }) => `  
     display: none;
     @media (min-width: 1024px) {
         top: 0;
@@ -27,7 +27,7 @@ export const InfoBox = styled.aside`
 `
 
 export const InfoWrapper = styled.div`
-  ${({ theme }) => `
+    ${({ theme }) => `
     top: ${theme.info.sizes.headerHeight}px;
     left: 0;
     width: 100%;
@@ -35,9 +35,7 @@ export const InfoWrapper = styled.div`
     opacity: 1;
     padding: 0 40px 0;
     position: absolute;
-    transition: bottom .5s 0s;
     will-change: opacity, bottom;
-    transition-timing-function: ease;
     ${InfoBox}.is-aside.closed & {
       bottom: ${theme.navigator.sizes.closedHeight}px;
     }

@@ -23,7 +23,6 @@ export const IconSvg = styled(SvgIcon)`
         fill: ${theme.info.colors.socialIcons};
         width: 40px;
         height: 40px;
-        transition: all .5s;
     }
   `}
 `

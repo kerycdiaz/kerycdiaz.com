@@ -22,6 +22,7 @@ const List = ({ posts }) => {
     <S.List>
       <SpringScrollbars forceCheckOnScroll={true} isNavigator={true}>
         <S.ListContent>
+
           <ListHeader />
           <S.ListBody>
             {posts &&
