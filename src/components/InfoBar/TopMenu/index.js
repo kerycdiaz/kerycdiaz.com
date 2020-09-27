@@ -23,21 +23,21 @@ const TopMenu = ({ setNavigatorPosition, setNavigatorShape }) => {
     setAnchorEl(null)
   }
 
-  const linkOnClick = () => {
-    setNavigatorPosition('is-featured')
+  const linkOnClick = (link) => {
+    setNavigatorPosition(link)
     setNavigatorShape('closed')
   }
 
   const items = [
-    { to: '/', title: 'Inicio' },
+    { to: '/', title: 'Inicio', link: 'is-feature' },
     ...pages.map((page) => {
       const { fields, frontmatter } = page.node
       const title = frontmatter.menuTitle
         ? frontmatter.menuTitle
         : frontmatter.title
-      return { to: fields.slug, title: title }
+      return { to: fields.slug, title: title, link: 'is-aside' }
     }),
-    { to: '/contact/', title: 'Contacto' },
+    { to: '/contact/', title: 'Contacto', link: 'is-aside' },
   ]
 
   return (
@@ -62,7 +62,7 @@ const TopMenu = ({ setNavigatorPosition, setNavigatorShape }) => {
             <S.MenuItemLink key={item.to} to={item.to}>
               <MenuItem
                 onClick={() => {
-                  linkOnClick()
+                  linkOnClick(item.link)
                   handleClose()
                 }}
               >
