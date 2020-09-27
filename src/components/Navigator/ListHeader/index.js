@@ -32,26 +32,24 @@ const ListHeader = ({
   const info = parts.find((el) => {
     return el.node.frontmatter.title === 'info'
   })
-  console.log(info)
+  console.log(navigatorShape)
   return (
     <header>
       <S.HeaderMobile>
         <h2>BLOG PERSONAL</h2>
         <div dangerouslySetInnerHTML={{ __html: info.node.html }}></div>
       </S.HeaderMobile>
-      {navigatorShape === 'closed' && (
-        <S.Closed>
-          <h3>List of posts</h3>
-          <S.IconExpand
-            aria-label="Expand the list"
-            onClick={expandOnClick}
-            title="Expand the list"
-          >
-            <ExpandLessIcon />
-          </S.IconExpand>
-        </S.Closed>
-      )}
-      {navigatorShape === 'open' && categoryFilter !== 'all posts' && (
+      <S.Closed>
+        <h3>List of posts</h3>
+        <S.IconExpand
+          aria-label="Expand the list"
+          onClick={expandOnClick}
+          title="Expand the list"
+        >
+          <ExpandLessIcon />
+        </S.IconExpand>
+      </S.Closed>
+      {categoryFilter !== 'all posts' && (
         <S.Filter>
           <small>Active category filter:</small>{' '}
           <strong>{categoryFilter}</strong>

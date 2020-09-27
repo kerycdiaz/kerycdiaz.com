@@ -118,7 +118,7 @@ class ActionsBar extends React.Component {
 
   homeOnClick = () => {
     this.props.setNavigatorPosition('is-featured')
-    this.props.setNavigatorShape('open')
+    this.props.setNavigatorShape('closed')
   }
 
   arrowUpOnClick = () => {
@@ -126,7 +126,9 @@ class ActionsBar extends React.Component {
   };
 
   render() {
-    const { classes, navigatorPosition, navigatorShape, isWideScreen, categories } = this.props;
+    const { classes, navigatorPosition, navigatorShape, categories } = this.props;
+    console.log(navigatorPosition)
+    console.log(navigatorShape)
     return (
       <div className={classes.actionsBar}>
         <div className={classes.group}>
@@ -138,8 +140,11 @@ class ActionsBar extends React.Component {
           >
             <HomeIcon />
           </IconButton>
-          {((isWideScreen && navigatorShape === "open") || navigatorPosition !== "is-aside") && (
-            <CategoryFilter categories={categories} filterCategory={this.categoryFilterOnClick} />
+          {((navigatorShape === "open") || navigatorPosition !== "is-aside") && (
+            <CategoryFilter
+              categories={categories}
+              filterCategory={this.categoryFilterOnClick}
+            />
           )}
           <IconButton
             aria-label="Search"
@@ -178,7 +183,6 @@ const mapStateToProps = (state, ownProps) => {
   return {
     navigatorPosition: state.reducers.navigatorPosition,
     navigatorShape: state.reducers.navigatorShape,
-    isWideScreen: state.reducers.isWideScreen,
     categoryFilter: state.reducers.categoryFilter
   };
 };

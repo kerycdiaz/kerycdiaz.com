@@ -72,6 +72,7 @@ export const Filter = styled.div`
       display: block;
     }
     @media (min-width: ${theme.mediaQueryTresholds.L}px) {
+      border-top: 0;
       margin: 0 0 1em 0;
       padding: 0 1em 1.5em;
       ${Navigator}.is-aside & {

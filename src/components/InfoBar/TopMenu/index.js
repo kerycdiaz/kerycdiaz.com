@@ -24,7 +24,7 @@ const TopMenu = ({ setNavigatorPosition, setNavigatorShape }) => {
   }
 
   const linkOnClick = () => {
-    setNavigatorPosition('is-aside')
+    setNavigatorPosition('is-featured')
     setNavigatorShape('closed')
   }
 
