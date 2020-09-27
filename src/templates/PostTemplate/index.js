@@ -1,33 +1,31 @@
 import { graphql } from 'gatsby'
-import React, { Component } from 'react'
+import React from 'react'
 
+import Content from '@components/Content'
 import Layout from '@components/Layout'
 import PostHeader from '@components/PostHeader'
 import SEO from '@components/Seo'
 
 import * as GS from '../styles'
 
-class BlogPostTemplate extends Component {
-  render() {
-    const { data, location } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const post = data.markdownRemark
-    const title = post.frontmatter.title
-    const description = post.frontmatter.description || post.excerpt
-    const date = post.frontmatter.date
-    return (
-      <Layout location={location} title={siteTitle}>
-        <SEO title={title} description={description} />
-        <GS.TemplateWrapper>
-          <PostHeader title={title} subTitle={description} date={date} />
-          <GS.ContentWrapper html={post.html} />
-        </GS.TemplateWrapper>
-      </Layout>
-    )
-  }
+const PostTemplate = ({ data, location }) => {
+  const siteTitle = data.site.siteMetadata.title
+  const post = data.markdownRemark
+  const title = post.frontmatter.title
+  const description = post.frontmatter.description || post.excerpt
+  const date = post.frontmatter.date
+  return (
+    <Layout location={location} title={siteTitle}>
+      <SEO title={title} description={description} />
+      <GS.TemplateWrapper>
+        <PostHeader title={title} subTitle={description} date={date} />
+        <Content html={post.html} />
+      </GS.TemplateWrapper>
+    </Layout>
+  )
 }
 
-export default BlogPostTemplate
+export default PostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {

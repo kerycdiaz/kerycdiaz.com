@@ -9,7 +9,7 @@ import {
 
 const initialState = {
   navigatorPosition: 'is-aside',
-  navigatorShape: 'closed',
+  navigatorShape: 'open',
   navigatorFilter: '',
   scrollToTop: false,
   fontSizeIncrease: 1,

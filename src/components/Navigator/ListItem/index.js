@@ -24,7 +24,7 @@ const ListItem = ({
   // analizar:
   const linkOnClick = () => {
     setNavigatorPosition('is-aside')
-    setNavigatorShape('closed')
+    setNavigatorShape('open')
   }
 
   return (

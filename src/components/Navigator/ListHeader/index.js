@@ -25,7 +25,6 @@ const ListHeader = ({
   const removefilterOnClick = () => {
     setCategoryFilter('all posts')
   }
-
   return (
     <header>
       {navigatorShape === 'closed' && (

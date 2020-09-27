@@ -19,8 +19,8 @@ import {
   setFontSizeIncrease,
   setCategoryFilter
 } from "@store/actions";
-//import FontSetter from "./FontSetter";
-//import CategoryFilter from "./CategoryFilter";
+import FontSetter from "./FontSetter";
+import CategoryFilter from "./CategoryFilter";
 
 const styles = theme => ({
   actionsBar: {
@@ -129,9 +129,9 @@ class ActionsBar extends React.Component {
           >
             <HomeIcon />
           </IconButton>
-          {/*((isWideScreen && navigatorShape === "open") || navigatorPosition !== "is-aside") && (
+          {((isWideScreen && navigatorShape === "open") || navigatorPosition !== "is-aside") && (
             <CategoryFilter categories={categories} filterCategory={this.categoryFilterOnClick} />
-          )*/}
+          )}
           <IconButton
             aria-label="Search"
             //onClick={this.searchOnClick}
@@ -145,7 +145,7 @@ class ActionsBar extends React.Component {
           </IconButton>
         </div>
         <div className={classes.group}>
-          {/*navigatorPosition === "is-aside" && <FontSetter increaseFont={this.fontSetterOnClick} />*/}
+          {navigatorPosition === "is-aside" && <FontSetter increaseFont={this.fontSetterOnClick} />}
           {screenfull.isEnabled && (
             <IconButton
               aria-label="Fullscreen"
@@ -167,10 +167,10 @@ class ActionsBar extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    navigatorPosition: state.navigatorPosition,
-    navigatorShape: state.navigatorShape,
-    isWideScreen: state.isWideScreen,
-    categoryFilter: state.categoryFilter
+    navigatorPosition: state.reducers.navigatorPosition,
+    navigatorShape: state.reducers.navigatorShape,
+    isWideScreen: state.reducers.isWideScreen,
+    categoryFilter: state.reducers.categoryFilter
   };
 };
 
