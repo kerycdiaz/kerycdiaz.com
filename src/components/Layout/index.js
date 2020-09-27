@@ -7,6 +7,8 @@ import Navigator from '@components/Navigator'
 
 import * as S from './styles'
 
+import CookieConsent from "react-cookie-consent";
+
 const Layout = ({ children }) => {
   return (
     <S.Layout>
@@ -15,6 +17,17 @@ const Layout = ({ children }) => {
       <ActionsBar />
       <InfoBar />
       <InfoBox />
+      <CookieConsent
+        location="bottom"
+        buttonText="De Acuerdo"
+        cookieName="gatsby-gdpr-google-analytics"
+        style={{ background: "#000" }}
+        buttonStyle={{ background: "#fff", color: "#000"}}
+        expires={150}
+      >
+        <small>Este sitio utiliza cookies. Si continuas navegando, aceptas su uso.
+        Puedes cambiar la configuración o desactivarlas en tu navegador. Más info.</small>
+      </CookieConsent>
     </S.Layout>
   )
 }
