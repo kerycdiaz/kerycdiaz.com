@@ -116,6 +116,15 @@ class ActionsBar extends React.Component {
     this.props.setCategoryFilter(val);
   };
 
+  homeOnClick = () => {
+    this.props.setNavigatorPosition('is-featured')
+    this.props.setNavigatorShape('open')
+  }
+
+  arrowUpOnClick = () => {
+    this.props.setScrollToTop(true);
+  };
+
   render() {
     const { classes, navigatorPosition, navigatorShape, isWideScreen, categories } = this.props;
     return (
@@ -123,7 +132,7 @@ class ActionsBar extends React.Component {
         <div className={classes.group}>
           <IconButton
             aria-label="Back to list"
-            //onClick={this.homeOnClick}
+            onClick={this.homeOnClick}
             title="Back to the list"
             className={classes.button}
           >
