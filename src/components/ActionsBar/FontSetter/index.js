@@ -38,7 +38,7 @@ const FontSetter = ({ setFontSizeIncrease }) => {
       </GS.ActionButtom>
 
       <Menu
-        id="simple-anchorEl"
+        id="simple-menu"
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}

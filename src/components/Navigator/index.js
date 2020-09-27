@@ -18,7 +18,7 @@ const Navigator = ({ navigatorPosition, navigatorShape }) => {
       return list
     }
   }, [])
-  
+
   const new_posts = []
   console.log(posts)
   posts.map((post) => new_posts.push(post))

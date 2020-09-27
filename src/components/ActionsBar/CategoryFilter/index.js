@@ -10,9 +10,7 @@ import { setCategoryFilter } from '@store/actions'
 
 import * as GS from '../styles'
 
-const CategoryFilter = ({
-  setCategoryFilter
-}) => {
+const CategoryFilter = ({ setCategoryFilter }) => {
   const posts = usePostsList()
 
   const [anchorEl, setAnchorEl] = useState(null)
@@ -59,7 +57,7 @@ const CategoryFilter = ({
       </GS.ActionButtom>
 
       <Menu
-        id="simple-anchorEl"
+        id="simple-menu"
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
