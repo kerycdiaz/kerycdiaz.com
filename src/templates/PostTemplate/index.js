@@ -3,6 +3,7 @@ import React from 'react'
 
 import Content from '@components/Content'
 import Layout from '@components/Layout'
+import PostFooter from '@components/PostFooter'
 import PostHeader from '@components/PostHeader'
 import SEO from '@components/Seo'
 
@@ -14,12 +15,14 @@ const PostTemplate = ({ data, location }) => {
   const title = post.frontmatter.title
   const description = post.frontmatter.description || post.excerpt
   const date = post.frontmatter.date
+  const slug = post.fields.slug
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title={title} description={description} />
       <GS.TemplateWrapper>
         <PostHeader title={title} subTitle={description} date={date} />
         <Content html={post.html} />
+        <PostFooter slug={slug} title={title} subTitle={description} />
       </GS.TemplateWrapper>
     </Layout>
   )
@@ -38,6 +41,9 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

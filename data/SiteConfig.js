@@ -12,7 +12,7 @@ const config = {
       summary: `Texto Summary`,
     },
     description: `Texto Description`,
-    siteUrl: `https://kerycdiaz.com/`,
+    siteUrl: `https://kerycdiaz.com`,
     social: {
       twitter: `kerycdiaz`,
     },
