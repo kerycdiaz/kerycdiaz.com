@@ -88,13 +88,10 @@ const ActionsBar = ({
 }) => {
   const [fullscreen, setFullscreen] = useState(false)
 
-  screenfull.on('change', () => {
-    setFullscreen(screenfull.isFullscreen)
-  })
-
   const fullscreenOnClick = () => {
     if (screenfull.isEnabled) {
       screenfull.toggle()
+      setFullscreen(!screenfull.isFullscreen)
     }
   }
 
