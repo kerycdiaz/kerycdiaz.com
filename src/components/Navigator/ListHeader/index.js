@@ -6,6 +6,8 @@ import { connect } from 'react-redux'
 
 import { setCategoryFilter, setNavigatorShape } from '@store/actions'
 
+import usePartsList from '@hooks/parts'
+
 import * as S from './styles'
 
 const ListHeader = ({
@@ -25,8 +27,18 @@ const ListHeader = ({
   const removefilterOnClick = () => {
     setCategoryFilter('all posts')
   }
+
+  const parts = usePartsList()
+  const info = parts.find((el) => {
+    return el.node.frontmatter.title === 'info'
+  })
+  console.log(info)
   return (
     <header>
+      <S.HeaderMobile>
+        <h2>BLOG PERSONAL</h2>
+        <p dangerouslySetInnerHTML={{ __html: info.node.html }}></p>
+      </S.HeaderMobile>
       {navigatorShape === 'closed' && (
         <S.Closed>
           <h3>List of posts</h3>

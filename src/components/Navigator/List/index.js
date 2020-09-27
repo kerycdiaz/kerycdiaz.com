@@ -20,17 +20,15 @@ const List = ({ posts }) => {
 
   return (
     <S.List>
-      {
-        <SpringScrollbars forceCheckOnScroll={true} isNavigator={true}>
-          <S.ListContent>
-            <ListHeader />
-            <S.ListBody>
-              {posts &&
-                posts.map((post, i) => <ListItem key={i} post={post} />)}
-            </S.ListBody>
-          </S.ListContent>
-        </SpringScrollbars>
-      }
+      <SpringScrollbars forceCheckOnScroll={true} isNavigator={true}>
+        <S.ListContent>
+          <ListHeader />
+          <S.ListBody>
+            {posts &&
+              posts.map((post, i) => <ListItem key={i} post={post} />)}
+          </S.ListBody>
+        </S.ListContent>
+      </SpringScrollbars>
     </S.List>
   )
 }

@@ -2,4 +2,4 @@
 title: info
 ---
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.
+Hola, espero ayudarte a crecer y aprender. Estoy para contarte historias personales, enseñarte de lo que me apasiona y también aprender de ustedes.

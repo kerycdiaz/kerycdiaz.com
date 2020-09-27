@@ -39,7 +39,7 @@ const CategoryFilter = ({ classes, setCategoryFilter }) => {
   }
 
   const categories = [
-    { name: 'All posts', key: 'all' },
+    { name: 'all posts', key: 'all' },
     ...posts
       .reduce((list, edge, i) => {
         const category = edge.node.frontmatter.category

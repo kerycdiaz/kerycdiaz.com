@@ -56,12 +56,13 @@ export const Filter = styled.div`
   ${({ theme }) => `
     color: ${theme.base.colors.accent};
     margin: 0 calc(-.5rem + ${theme.base.sizes.linesMargin}) 1em calc(-.5rem + ${theme.base.sizes.linesMargin});
-    padding: 0 1em 1em;
+    padding: 1em 1em 1em;
     position: relative;
     font-size: 1.2em;
     font-weight: 300;
     line-height: 1;
     border-bottom: 1px solid ${theme.base.colors.lines};
+    border-top: 1px solid ${theme.base.colors.lines};
     strong {
       display: block;
       font-weight: 600;
@@ -77,6 +78,23 @@ export const Filter = styled.div`
         margin: 0 calc(-.5rem + ${theme.base.sizes.linesMargin}) 1em calc(-.5rem + ${theme.base.sizes.linesMargin});
         padding: 0 0 1em .5em;
       }
+    }
+  `}
+`
+
+export const HeaderMobile = styled.div`
+  ${({ theme }) => `
+    font-size: 0.95em;
+    text-align: center;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-top: -1.5em;
+    display: block;
+    p {
+      color: #524949
+    }
+    @media (min-width: ${theme.mediaQueryTresholds.L}px) {
+      display: none;
     }
   `}
 `
