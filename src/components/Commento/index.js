@@ -18,7 +18,7 @@ const removeScript = (id, parentElement) => {
 };
 
 
-const Commento = ({classes, id}) => {
+const Commento = ({id}) => {
   useEffect(() => {
     if (! window) {
       return;

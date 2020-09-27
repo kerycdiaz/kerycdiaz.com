@@ -16,11 +16,12 @@ const PostTemplate = ({ data, location }) => {
   const description = post.frontmatter.description || post.excerpt
   const date = post.frontmatter.date
   const slug = post.fields.slug
+  const timeToRead = post.timeToRead
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title={title} description={description} />
       <GS.TemplateWrapper>
-        <PostHeader title={title} subTitle={description} date={date} />
+        <PostHeader title={title} subTitle={description} date={date} timeToRead={timeToRead} />
         <Content html={post.html} />
         <PostFooter slug={slug} title={title} subTitle={description} />
       </GS.TemplateWrapper>
@@ -41,6 +42,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      timeToRead
       fields {
         slug
       }
