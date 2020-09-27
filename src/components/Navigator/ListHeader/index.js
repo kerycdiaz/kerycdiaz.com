@@ -21,7 +21,7 @@ const ListHeader = ({
 
     // analizar: creo que es para solicitar
     // de nuevo la carga de imagenes
-    setTimeout(forceCheck, 0)
+    //setTimeout(forceCheck, 0)
   }
 
   const removefilterOnClick = () => {

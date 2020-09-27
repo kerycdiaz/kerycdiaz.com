@@ -66,7 +66,6 @@ const CategoryFilter = ({ classes, setCategoryFilter }) => {
         aria-haspopup="true"
         onClick={handleClick}
         title="Filter the list by category"
-        className={classes.open}
       >
         <FilterListIcon />
       </IconButton>

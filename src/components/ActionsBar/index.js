@@ -2,7 +2,6 @@ import React from "react";
 import { withStyles } from '@material-ui/core/styles';
 import IconButton from "@material-ui/core/IconButton";
 
-import Link from "gatsby-link";
 import { connect } from "react-redux";
 import screenfull from "screenfull";
 
@@ -11,6 +10,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import FullscreenExitIcon from "@material-ui/icons/FullscreenExit";
+import { Link } from 'gatsby'
 
 import {
   setNavigatorPosition,
@@ -132,14 +132,16 @@ class ActionsBar extends React.Component {
     return (
       <div className={classes.actionsBar}>
         <div className={classes.group}>
-          <IconButton
-            aria-label="Back to list"
-            onClick={this.homeOnClick}
-            title="Back to the list"
-            className={classes.button}
-          >
-            <HomeIcon />
-          </IconButton>
+          <Link to="/">
+            <IconButton
+              aria-label="Back to list"
+              onClick={this.homeOnClick}
+              title="Back to the list"
+              className={classes.button}
+            >
+              <HomeIcon />
+            </IconButton>
+          </Link>
           {((navigatorShape === "open") || navigatorPosition !== "is-aside") && (
             <CategoryFilter
               categories={categories}

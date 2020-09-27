@@ -10,22 +10,14 @@ import { setNavigatorPosition, setNavigatorShape } from '@store/actions'
 
 import * as S from './styles'
 
-//analizar avatar:
-
 const InfoHeader = ({ setNavigatorPosition, setNavigatorShape }) => {
-  // analizar:
-  const avatarOnClick = () => {
-    setNavigatorPosition('is-featured')
-    setNavigatorShape('open')
-  }
-
   const expandOnClick = () => {
     setNavigatorShape('closed')
   }
 
   return (
     <S.InfoHeader>
-      <S.AvatarLink onClick={avatarOnClick} to="/" title="back to Home page">
+      <S.AvatarLink to="/" title="back to Home page">
         <S.AvatarImg>
           <img src={avatar} alt="" />
         </S.AvatarImg>
