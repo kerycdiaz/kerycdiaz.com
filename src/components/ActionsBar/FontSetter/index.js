@@ -1,26 +1,14 @@
-import IconButton from '@material-ui/core/IconButton'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-import { withStyles } from '@material-ui/core/styles'
 import FormatSizeIcon from '@material-ui/icons/FormatSize'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
 import { setFontSizeIncrease } from '@store/actions'
 
-const styles = (theme) => ({
-  fontSizeSetter: {
-    [`@media (min-width: ${theme.mediaQueryTresholds.M}px)`]: {},
-  },
-  open: {
-    color: theme.bars.colors.icon,
-  },
-  popperClose: {
-    pointerEvents: 'none',
-  },
-})
+import * as GS from '../styles'
 
-const FontSetter = ({ classes, setFontSizeIncrease }) => {
+const FontSetter = ({ setFontSizeIncrease }) => {
   const [anchorEl, setAnchorEl] = useState(null)
 
   const handleClick = (event) => {
@@ -38,20 +26,19 @@ const FontSetter = ({ classes, setFontSizeIncrease }) => {
     handleClose()
   }
   return (
-    <nav className={classes.fontSizeSetter}>
-      <IconButton
+    <nav>
+      <GS.ActionButtom
         aria-label="Increase font size"
-        aria-owns={anchorEl ? 'long-menu' : null}
+        aria-owns={anchorEl ? 'long-anchorEl' : null}
         aria-haspopup="true"
         onClick={handleClick}
         title="Change font size"
-        className={classes.open}
       >
         <FormatSizeIcon />
-      </IconButton>
+      </GS.ActionButtom>
 
       <Menu
-        id="simple-menu"
+        id="simple-anchorEl"
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
@@ -70,4 +57,4 @@ const mapDispatchToProps = {
   setFontSizeIncrease,
 }
 
-export default connect(null, mapDispatchToProps)(withStyles(styles)(FontSetter))
+export default connect(null, mapDispatchToProps)(FontSetter)

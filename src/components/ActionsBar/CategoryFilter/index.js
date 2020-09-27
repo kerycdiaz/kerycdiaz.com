@@ -1,7 +1,5 @@
-import IconButton from '@material-ui/core/IconButton'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-import { withStyles } from '@material-ui/core/styles'
 import FilterListIcon from '@material-ui/icons/FilterList'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
@@ -10,22 +8,11 @@ import usePostsList from '@hooks/posts'
 
 import { setCategoryFilter } from '@store/actions'
 
-const styles = (theme) => ({
-  fontSizeSetter: {
-    [`@media (min-width: ${theme.mediaQueryTresholds.M}px)`]: {},
-  },
-  open: {
-    color: theme.bars.colors.icon,
-  },
-  popperClose: {
-    pointerEvents: 'none',
-  },
-  popper: {
-    zIndex: 1,
-  },
-})
+import * as GS from '../styles'
 
-const CategoryFilter = ({ classes, setCategoryFilter }) => {
+const CategoryFilter = ({
+  setCategoryFilter
+}) => {
   const posts = usePostsList()
 
   const [anchorEl, setAnchorEl] = useState(null)
@@ -59,19 +46,20 @@ const CategoryFilter = ({ classes, setCategoryFilter }) => {
     setCategoryFilter(category)
     handleClose()
   }
+
   return (
-    <nav className={classes.fontSizeSetter}>
-      <IconButton
+    <nav>
+      <GS.ActionButtom
         aria-label="Filter by category"
         aria-haspopup="true"
         onClick={handleClick}
         title="Filter the list by category"
       >
         <FilterListIcon />
-      </IconButton>
+      </GS.ActionButtom>
 
       <Menu
-        id="simple-menu"
+        id="simple-anchorEl"
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
@@ -93,7 +81,4 @@ const mapDispatchToProps = {
   setCategoryFilter,
 }
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(withStyles(styles)(CategoryFilter))
+export default connect(null, mapDispatchToProps)(CategoryFilter)

@@ -4,9 +4,9 @@ import React from 'react'
 import { forceCheck } from 'react-lazyload'
 import { connect } from 'react-redux'
 
-import { setCategoryFilter, setNavigatorShape } from '@store/actions'
-
 import usePartsList from '@hooks/parts'
+
+import { setCategoryFilter, setNavigatorShape } from '@store/actions'
 
 import * as S from './styles'
 
