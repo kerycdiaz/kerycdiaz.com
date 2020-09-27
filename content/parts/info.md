@@ -2,4 +2,4 @@
 title: info
 ---
 
-Hola, espero ayudarte a crecer y aprender. Estoy para contarte historias personales, enseñarte de lo que me apasiona y también aprender de ustedes.
+Hola, espero ayudarte a crecer y aprender. Estoy para contarte historias personales, enseñarte de lo que me apasiona, convivir contigo y también aprender de ti.

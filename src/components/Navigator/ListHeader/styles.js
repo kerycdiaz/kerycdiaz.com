@@ -84,13 +84,14 @@ export const Filter = styled.div`
 
 export const HeaderMobile = styled.div`
   ${({ theme }) => `
-    font-size: 0.95em;
+    
     text-align: center;
     font-weight: 300;
-    line-height: 1.5;
     margin-top: -1.5em;
     display: block;
     p {
+      line-height: 1.3;
+      font-size: 1em;
       color: #524949
     }
     @media (min-width: ${theme.mediaQueryTresholds.L}px) {

@@ -36,8 +36,8 @@ const ListHeader = ({
   return (
     <header>
       <S.HeaderMobile>
-        <h3>BLOG PERSONAL</h3>
-        <p dangerouslySetInnerHTML={{ __html: info.node.html }}></p>
+        <h2>BLOG PERSONAL</h2>
+        <div dangerouslySetInnerHTML={{ __html: info.node.html }}></div>
       </S.HeaderMobile>
       {navigatorShape === 'closed' && (
         <S.Closed>
