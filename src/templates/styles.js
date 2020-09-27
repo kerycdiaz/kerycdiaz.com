@@ -7,9 +7,9 @@ import SpringScrollbars from '@components/SpringScrollbars'
 export const Article = styled.div`
   ${({ theme }) => `
     margin: 0 auto;
-    padding: calc(60px + 1.5rem) 1.5rem  1.5rem 1.5rem;
-    max-width: 50em;
-    background: #ffffff;
+    padding: calc(${theme.bars.sizes.infoBar}px + 1.5rem) 1.5rem  1.5rem 1.5rem;
+    max-width: ${theme.main.sizes.articleMaxWidth};
+    background:${theme.main.colors.background};
     strong, b {
       letter-spacing: -.02em;
     }
@@ -17,15 +17,15 @@ export const Article = styled.div`
       font-weight: bold;
       letter-spacing: -.02em;
       text-decoration: underline;
+      :hover {
+        color: ${theme.base.colors.linkHover};
+      }
     }
-    @media (min-width: 600px) {
-      padding: calc(2.5rem + 60px) 3.5rem 2.5rem;
+    @media (min-width: ${theme.mediaQueryTresholds.M}px) {
+      padding: calc(2.5rem + ${theme.bars.sizes.infoBar}px) 3.5rem 2.5rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: ${theme.mediaQueryTresholds.L}px) {
       padding: 3.5rem;
-    }
-    a:hover {
-      color: hsl(79.5, 60%, 39.9%);
     }
   `}
 `
@@ -46,8 +46,6 @@ export const TemplateWrapper = styled(Template)`
     width: 100%;
     bottom: 0;
     position: absolute;
-    animation-name: main-entry;
-    animation-duration: .5s;
     @media (min-width: ${theme.mediaQueryTresholds.L}px) {
         left: ${theme.info.sizes.width}px;
         width: calc(100vw - ${theme.info.sizes.width}px - ${theme.bars.sizes.actionsBar}px);
