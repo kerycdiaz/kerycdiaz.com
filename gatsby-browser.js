@@ -9,6 +9,6 @@ export const wrapRootElement = ({ element }) => (
   </ReduxWrapper>
 )
 
-exports.onServiceWorkerUpdateReady = () => {
+export const onServiceWorkerUpdateReady = () => {
   window.location.reload()
 }
