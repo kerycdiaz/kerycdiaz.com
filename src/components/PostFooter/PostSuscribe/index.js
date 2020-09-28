@@ -17,9 +17,13 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: '2px 4px',
-    display: 'flex',
-    width: 400,
+    display: 'grid',
+    width: '100%',
     margin: '0 auto',
+    [`@media (min-width: ${theme.mediaQueryTresholds.M}px)`]: {
+        display: 'flex',
+        width: '400px',
+    }
   },
   input: {
     marginLeft: theme.spacing(1),
