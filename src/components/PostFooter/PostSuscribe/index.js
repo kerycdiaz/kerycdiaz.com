@@ -34,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
     margin: '0 auto',
     marginTop: '1em',
     [`@media (min-width: ${theme.mediaQueryTresholds.M}px)`]: {
-        display: 'flex',
         width: '400px',
     }
   },
@@ -73,7 +72,7 @@ const PostSuscribe = (props) => {
         </Button>
       </Paper>
       <Collapse in={result !== ''} className={classes.alert}>
-        <Alert severity={result}>
+        <Alert severity={result || 'info'}>
           {result === 'success' ? (
             <span>Te has suscrito exitosamente.</span>
           ) : (
