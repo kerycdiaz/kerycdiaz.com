@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '2em 0 0',
     textAlign: 'center',
     '& p': {
-      margin: '1em !important',
+      margin: '1em 0 !important',
     },
   },
   paper: {
@@ -30,9 +30,13 @@ const useStyles = makeStyles((theme) => ({
     flex: 1,
   },
   alert: {
-    width: '400px',
+    width: '100%',
     margin: '0 auto',
     marginTop: '1em',
+    [`@media (min-width: ${theme.mediaQueryTresholds.M}px)`]: {
+        display: 'flex',
+        width: '400px',
+    }
   },
 }))
 

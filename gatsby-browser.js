@@ -8,3 +8,7 @@ export const wrapRootElement = ({ element }) => (
     <MaterialUiWrapper>{element}</MaterialUiWrapper>
   </ReduxWrapper>
 )
+
+exports.onServiceWorkerUpdateReady = () => {
+  window.location.reload()
+}
