@@ -21,7 +21,12 @@ const PostTemplate = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title={title} description={description} />
       <GS.TemplateWrapper>
-        <PostHeader title={title} subTitle={description} date={date} timeToRead={timeToRead} />
+        <PostHeader
+          title={title}
+          subTitle={description}
+          date={date}
+          timeToRead={timeToRead}
+        />
         <Content html={post.html} />
         <PostFooter slug={slug} title={title} subTitle={description} />
       </GS.TemplateWrapper>

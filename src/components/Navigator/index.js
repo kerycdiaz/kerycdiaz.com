@@ -20,12 +20,10 @@ const Navigator = ({ navigatorPosition, navigatorShape }) => {
   }, [])
 
   const new_posts = []
-  console.log(posts)
   posts.map((post) => new_posts.push(post))
   posts.map((post) => new_posts.push(post))
   posts.map((post) => new_posts.push(post))
   posts.map((post) => new_posts.push(post))
-  console.log(new_posts)
 
   return (
     <S.Navigator

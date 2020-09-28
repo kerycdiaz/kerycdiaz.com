@@ -61,10 +61,10 @@ module.exports = {
         googleAnalytics: {
           trackingId: 'UA-179150462-1', // leave empty if you want to disable the tracker
           cookieName: 'gatsby-gdpr-google-analytics', // default
-          anonymize: true // default
+          anonymize: true, // default
         },
         // defines the environments where the tracking should be available  - default is ["production"]
-        environments: ['production', 'development']
+        environments: ['production', 'development'],
       },
     },
     {
@@ -93,5 +93,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint:
+          'https://kerycdiaz.us2.list-manage.com/subscribe/post?u=bdc6dbfffdc1c782a9ec48d85&amp;id=9d55b5a1fb',
+        timeout: 3500,
+      },
+    },
   ],
 }

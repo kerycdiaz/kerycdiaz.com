@@ -9,7 +9,9 @@ const PostHeader = ({ title, subTitle, date, timeToRead }) => {
     <S.PostHeader>
       <S.HeaderTitle>{title}</S.HeaderTitle>
       <S.HeaderSubTitle>{subTitle}</S.HeaderSubTitle>
-      <S.HeaderDate>{dateFormat} . {timeToRead} min read</S.HeaderDate>
+      <S.HeaderDate>
+        {dateFormat} . {timeToRead} min read
+      </S.HeaderDate>
     </S.PostHeader>
   )
 }

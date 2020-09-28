@@ -1,10 +1,12 @@
 import { withStyles } from '@material-ui/core/styles'
 import React from 'react'
 
-import PostShare from './PostShare'
 import usePartsList from '@hooks/parts'
-import PostAuthor from "./PostAuthor";
-import PostComments from "./PostComments";
+
+import PostAuthor from './PostAuthor'
+import PostComments from './PostComments'
+import PostShare from './PostShare'
+import PostSuscribe from './PostSuscribe'
 
 const styles = (theme) => ({
   footer: {
@@ -26,7 +28,8 @@ const PostFooter = ({ classes, slug, title, subTitle }) => {
     <footer className={classes.footer}>
       <PostShare slug={slug} title={title} subTitle={subTitle} />
       <PostAuthor author={author.node} />
-      <PostComments slug={slug}/>
+      <PostSuscribe />
+      <PostComments slug={slug} />
     </footer>
   )
 }

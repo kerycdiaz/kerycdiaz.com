@@ -29,7 +29,6 @@ const ListHeader = ({
   const info = parts.find((el) => {
     return el.node.frontmatter.title === 'info'
   })
-  console.log(navigatorShape)
   return (
     <header>
       <S.HeaderMobile>
