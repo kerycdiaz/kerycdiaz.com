@@ -70,7 +70,9 @@ export default createGlobalStyle`
   button, input, optgroup, select, textarea {
     margin: 0;
     font-size: 100%;
-    font-family: sans-serif;
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'San Francisco',
+      'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI',
+      'Arial', sans-serif;
     line-height: 1.15;
   }
   button, input {
@@ -144,7 +146,9 @@ export default createGlobalStyle`
   }
   html {
     box-sizing: border-box;
-    font-family: Open Sans;
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'San Francisco',
+      'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI',
+      'Arial', sans-serif;
     line-height: 1.15;
     text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;

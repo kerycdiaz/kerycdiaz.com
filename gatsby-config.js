@@ -89,19 +89,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: {
-          google: [
-            {
-              family: 'Open Sans',
-              variants: ['300', '400', '600'],
-            },
-          ],
-        },
-      },
-    },
     `gatsby-plugin-offline`,
     {
       resolve: 'gatsby-plugin-mailchimp',

@@ -18,7 +18,7 @@ const theme = createMuiTheme({
     },
     fonts: {
       unstyledFamily: `Arial`,
-      styledFamily: 'Open Sans',
+      styledFamily: `-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif`,
       styledFonts: '300,400,600',
     },
   },
@@ -147,7 +147,7 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    fontFamily: `Arial, sans-serif`,
+    fontFamily: `-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif`,
     fontSize: 16,
   },
 })
