@@ -3,6 +3,7 @@ import CookieConsent from 'react-cookie-consent'
 
 import ActionsBar from '@components/ActionsBar'
 import InfoBar from '@components/InfoBar'
+import InfoBox from '@components/InfoBox'
 import Navigator from '@components/Navigator'
 
 import * as S from './styles'
@@ -14,9 +15,7 @@ const Layout = ({ children }) => {
       <Navigator />
       <ActionsBar />
       <InfoBar />
-      {/*<Suspense fallback={renderLoader()}>
-        <InfoBox />
-      </Suspense>*/}
+      <InfoBox />
       <CookieConsent
         location="bottom"
         buttonText="De Acuerdo"
