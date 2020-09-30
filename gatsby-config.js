@@ -90,15 +90,17 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          {
-            family: 'Open Sans',
-            variants: ['300', '400', '600'],
-          },
-        ],
-      },
+        fonts: {
+          google: [
+            {
+              family: "Open Sans",
+              variants: ['300', '400', '600'],
+            }
+          ]
+        }
+      }
     },
     `gatsby-plugin-offline`,
     {
@@ -110,6 +112,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
-    `gatsby-plugin-preload-fonts`,
   ],
 }
