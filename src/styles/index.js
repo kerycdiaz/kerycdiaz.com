@@ -6,10 +6,10 @@ import { default as GlobalStyle } from '@styles/globals'
 import theme from '@styles/theme'
 
 export default ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <MuiThemeProvider theme={theme}>
-        <GlobalStyle />
-        {children}
-    </MuiThemeProvider>
-  </ThemeProvider>
+  <MuiThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      {children}
+    </ThemeProvider>
+  </MuiThemeProvider>
 )
