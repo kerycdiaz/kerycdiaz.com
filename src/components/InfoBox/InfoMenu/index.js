@@ -26,9 +26,9 @@ const InfoMenu = ({ setNavigatorPosition, setNavigatorShape }) => {
           </S.MenuLink>
         )
       })}
-      <S.MenuLink to="/contact/" onClick={linkOnClick}>
+      {/*<S.MenuLink to="/contact/" onClick={linkOnClick}>
         Contact
-      </S.MenuLink>
+      </S.MenuLink>*/}
     </S.InfoMenu>
   )
 }

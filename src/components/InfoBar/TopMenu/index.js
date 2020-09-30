@@ -37,7 +37,7 @@ const TopMenu = ({ setNavigatorPosition, setNavigatorShape }) => {
         : frontmatter.title
       return { to: fields.slug, title: title, link: 'is-aside' }
     }),
-    { to: '/contact/', title: 'Contacto', link: 'is-aside' },
+    //{ to: '/contact/', title: 'Contacto', link: 'is-aside' },
   ]
 
   return (

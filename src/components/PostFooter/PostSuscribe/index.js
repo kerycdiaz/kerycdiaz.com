@@ -21,9 +21,9 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     margin: '0 auto',
     [`@media (min-width: ${theme.mediaQueryTresholds.M}px)`]: {
-        display: 'flex',
-        width: '400px',
-    }
+      display: 'flex',
+      width: '400px',
+    },
   },
   input: {
     marginLeft: theme.spacing(1),
@@ -34,8 +34,8 @@ const useStyles = makeStyles((theme) => ({
     margin: '0 auto',
     marginTop: '1em',
     [`@media (min-width: ${theme.mediaQueryTresholds.M}px)`]: {
-        width: '400px',
-    }
+      width: '400px',
+    },
   },
 }))
 

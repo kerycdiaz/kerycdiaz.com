@@ -1,21 +1,29 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import CookieConsent from 'react-cookie-consent'
 
 import ActionsBar from '@components/ActionsBar'
 import InfoBar from '@components/InfoBar'
-import InfoBox from '@components/InfoBox'
-import Navigator from '@components/Navigator'
 
 import * as S from './styles'
 
+const Navigator = lazy(() => import('../Navigator'))
+
 const Layout = ({ children }) => {
+  const isSSR = typeof window === 'undefined'
+
   return (
     <S.Layout>
       {children}
-      <Navigator />
+      {!isSSR && (
+        <Suspense fallback={<div>Loading...</div>}>
+          <Navigator />
+        </Suspense>
+      )}
       <ActionsBar />
       <InfoBar />
-      <InfoBox />
+      {/*<Suspense fallback={renderLoader()}>
+        <InfoBox />
+      </Suspense>*/}
       <CookieConsent
         location="bottom"
         buttonText="De Acuerdo"

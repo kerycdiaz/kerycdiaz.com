@@ -64,7 +64,7 @@ const ActionsBar = ({
         {(navigatorShape === 'open' || navigatorPosition !== 'is-aside') && (
           <CategoryFilter />
         )}
-        <S.ActionButtom
+        {/*<S.ActionButtom
           aria-label="Search"
           //onClick={this.searchOnClick}
           component={Link}
@@ -73,7 +73,7 @@ const ActionsBar = ({
           title="Search"
         >
           <SearchIcon />
-        </S.ActionButtom>
+        </S.ActionButtom>*/}
       </S.ActionsGroup>
       <S.ActionsGroup>
         {navigatorPosition === 'is-aside' && (
