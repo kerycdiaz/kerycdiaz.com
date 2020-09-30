@@ -1,24 +1,17 @@
-import React, { lazy, Suspense } from 'react'
+import React from 'react'
 import CookieConsent from 'react-cookie-consent'
 
 import ActionsBar from '@components/ActionsBar'
 import InfoBar from '@components/InfoBar'
+import Navigator from '@components/Navigator'
 
 import * as S from './styles'
 
-const Navigator = lazy(() => import('../Navigator'))
-
 const Layout = ({ children }) => {
-  const isSSR = typeof window === 'undefined'
-
   return (
     <S.Layout>
       {children}
-      {!isSSR && (
-        <Suspense fallback={<div>Loading...</div>}>
-          <Navigator />
-        </Suspense>
-      )}
+      <Navigator />
       <ActionsBar />
       <InfoBar />
       {/*<Suspense fallback={renderLoader()}>
