@@ -56,12 +56,14 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-gdpr-cookies`,
+      resolve: 'gatsby-plugin-gdpr-tracking',
       options: {
+        debug: false,
         googleAnalytics: {
           trackingId: 'UA-179150462-1',
-          cookieName: 'gatsby-gdpr-google-analytics',
+          autoStart: false,
           anonymize: true,
+          controlCookieName: 'gatsby-gdpr-google-analytics',
         },
         environments: ['production', 'development'],
       },
@@ -93,7 +95,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-remove-serviceworker`,
     {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
@@ -121,13 +122,13 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+              return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
                 })
               })
             },
@@ -151,7 +152,7 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
+            output: '/rss.xml',
           },
         ],
       },

@@ -10,7 +10,6 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-
 const getSchemaOrgJSONLD = ({
   isPost,
   url,
@@ -18,7 +17,7 @@ const getSchemaOrgJSONLD = ({
   absoluteImage,
   description,
   postDate,
-  extra
+  extra,
 }) => {
   const schemaOrgJSONLD = [
     {
@@ -28,7 +27,7 @@ const getSchemaOrgJSONLD = ({
       name: title,
       alternateName: extra.title,
     },
-  ];
+  ]
 
   return isPost
     ? [
@@ -77,9 +76,8 @@ const getSchemaOrgJSONLD = ({
           postDate,
         },
       ]
-    : schemaOrgJSONLD;
-};
-
+    : schemaOrgJSONLD
+}
 
 const SEO = ({ data }) => {
   const { site } = useStaticQuery(
@@ -118,9 +116,9 @@ const SEO = ({ data }) => {
     : site.siteMetadata.siteImage
   const absoluteImage = `${site.siteMetadata.siteUrl}/${image}`
   const url = site.siteMetadata.siteUrl + postSlug
-  
+
   const isPost = postTitle ? true : false
-  const alternateName = site.siteMetadata.title;
+  const alternateName = site.siteMetadata.title
   const extra = {
     author,
     title: site.siteMetadata.title,
@@ -135,8 +133,8 @@ const SEO = ({ data }) => {
     absoluteImage,
     description,
     postDate,
-    extra
-  });
+    extra,
+  })
 
   return (
     <Helmet
