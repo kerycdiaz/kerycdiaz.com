@@ -8,13 +8,14 @@ import SEO from '@components/Seo'
 
 import * as GS from '../styles'
 
-const PageTemplate = ({ data, fontSizeIncrease }) => {
+const PageTemplate = ({ data }) => {
   const page = data.markdownRemark
+  const title = page.frontmatter.title
   return (
     <Layout>
-      <SEO title="All posts" />
+      <SEO data={page} />
       <GS.TemplateWrapper>
-        <PageHeader title={page.frontmatter.title} />
+        <PageHeader title={title} />
         <Content html={page.html} />
       </GS.TemplateWrapper>
     </Layout>

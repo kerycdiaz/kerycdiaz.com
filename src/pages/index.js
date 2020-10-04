@@ -19,7 +19,7 @@ const Index = ({ navigatorPosition, setNavigatorPosition }) => {
 
   return (
     <Layout>
-      <SEO title="All posts" />
+      <SEO />
     </Layout>
   )
 }

@@ -44,7 +44,11 @@ const styles = (theme) => ({
 const PostAuthor = ({ classes, author }) => {
   return (
     <div className={classes.author}>
-      <Avatar src={avatar} className={classes.avatar} alt={config.authorName} />
+      <Avatar
+        src={avatar}
+        className={classes.avatar}
+        alt={config.siteMetadata.author.name}
+      />
       <div
         className={classes.box}
         dangerouslySetInnerHTML={{ __html: author.html }}

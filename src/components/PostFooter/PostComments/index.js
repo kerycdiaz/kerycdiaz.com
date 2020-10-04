@@ -11,10 +11,10 @@ const styles = () => ({
   },
 })
 
-const PostComments = ({ classes, slug }) => {
+const PostComments = ({ classes, id }) => {
   return (
     <div className={classes.postComments}>
-      <Commento id={slug} />
+      <Commento id={id} />
     </div>
   )
 }

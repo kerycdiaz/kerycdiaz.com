@@ -19,7 +19,7 @@ const styles = (theme) => ({
   },
 })
 
-const PostFooter = ({ classes, slug, title, subTitle }) => {
+const PostFooter = ({ classes, id, slug, title, subTitle }) => {
   const parts = usePartsList()
   const author = parts.find((el) => {
     return el.node.frontmatter.title === 'author'
@@ -29,7 +29,7 @@ const PostFooter = ({ classes, slug, title, subTitle }) => {
       <PostShare slug={slug} title={title} subTitle={subTitle} />
       <PostAuthor author={author.node} />
       <PostSuscribe />
-      <PostComments slug={slug} />
+      <PostComments id={id} />
     </footer>
   )
 }

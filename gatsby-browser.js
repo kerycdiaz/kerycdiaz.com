@@ -8,13 +8,3 @@ export const wrapRootElement = ({ element }) => (
     <MaterialUiWrapper>{element}</MaterialUiWrapper>
   </ReduxWrapper>
 )
-
-export const onServiceWorkerUpdateReady = () => {
-  const answer = window.confirm(
-    `Esta aplicación ha sido actualizada.` +
-      `¿Deseas recargar para mostrar la última versión?`
-  )
-  if (answer === true) {
-    window.location.reload()
-  }
-}

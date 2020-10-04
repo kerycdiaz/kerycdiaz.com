@@ -9,8 +9,7 @@ import SEO from '@components/Seo'
 
 import * as GS from '../styles'
 
-const PostTemplate = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+const PostTemplate = ({ data }) => {
   const post = data.markdownRemark
   const title = post.frontmatter.title
   const description = post.frontmatter.description || post.excerpt
@@ -18,8 +17,8 @@ const PostTemplate = ({ data, location }) => {
   const slug = post.fields.slug
   const timeToRead = post.timeToRead
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title={title} description={description} />
+    <Layout>
+      <SEO data={post} />
       <GS.TemplateWrapper>
         <PostHeader
           title={title}
@@ -28,7 +27,12 @@ const PostTemplate = ({ data, location }) => {
           timeToRead={timeToRead}
         />
         <Content html={post.html} />
-        <PostFooter slug={slug} title={title} subTitle={description} />
+        <PostFooter
+          id={post.id}
+          slug={slug}
+          title={title}
+          subTitle={description}
+        />
       </GS.TemplateWrapper>
     </Layout>
   )
@@ -38,11 +42,6 @@ export default PostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
@@ -55,6 +54,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        imagen {
+          childImageSharp {
+            resize(width: 300) {
+              src
+            }
+          }
+        }
       }
     }
   }

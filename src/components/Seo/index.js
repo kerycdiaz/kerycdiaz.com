@@ -2,15 +2,15 @@
  * SEO component that queries for data with
  *  Gatsby's useStaticQuery React hook
  *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
+ * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import { graphql, useStaticQuery } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-const SEO = ({ description, lang, meta, title }) => {
+const SEO = ({ data }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,6 +18,11 @@ const SEO = ({ description, lang, meta, title }) => {
           siteMetadata {
             title
             description
+            siteUrl
+            siteImage
+            author {
+              name
+            }
             social {
               twitter
             }
@@ -26,20 +31,36 @@ const SEO = ({ description, lang, meta, title }) => {
       }
     `
   )
+  const postTitle = ((data || {}).frontmatter || {}).title
+  const postDescription = ((data || {}).frontmatter || {}).description
+  const postImage = ((data || {}).frontmatter || {}).imagen
+  const postSlug = ((data || {}).fields || {}).slug || ''
 
-  const metaDescription = description || site.siteMetadata.description
+  const author = site.siteMetadata.author.name
+  const title = postTitle
+    ? `${postTitle} - ${author}`
+    : `${site.siteMetadata.title}`
+  const description = postDescription || site.siteMetadata.description
+  const image = postImage
+    ? postImage.childImageSharp.resize.src
+    : site.siteMetadata.siteImage
+  const url = site.siteMetadata.siteUrl + postSlug
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: 'es',
+        prefix: 'og: http://ogp.me/ns#',
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: description,
+        },
+        {
+          name: `og:url`,
+          content: url,
         },
         {
           property: `og:title`,
@@ -47,7 +68,11 @@ const SEO = ({ description, lang, meta, title }) => {
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: description,
+        },
+        {
+          property: `og:image`,
+          content: image,
         },
         {
           property: `og:type`,
@@ -58,8 +83,16 @@ const SEO = ({ description, lang, meta, title }) => {
           content: `summary`,
         },
         {
+          name: `twitter:image`,
+          content: image,
+        },
+        {
+          name: `twitter:site`,
+          content: `@${author}`,
+        },
+        {
           name: `twitter:creator`,
-          content: site.siteMetadata.social.twitter,
+          content: site.siteMetadata?.social?.twitter || ``,
         },
         {
           name: `twitter:title`,
@@ -67,24 +100,15 @@ const SEO = ({ description, lang, meta, title }) => {
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: description,
         },
-      ].concat(meta)}
+      ]}
     />
   )
 }
 
-SEO.defaultProps = {
-  lang: `es`,
-  meta: [],
-  description: ``,
-}
-
 SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+  data: PropTypes.object,
 }
 
 export default SEO

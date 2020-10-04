@@ -1,4 +1,4 @@
-import NoSsr from '@material-ui/core/NoSsr';
+import NoSsr from '@material-ui/core/NoSsr'
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
