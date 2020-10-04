@@ -44,6 +44,7 @@ const SEO = ({ data }) => {
   const image = postImage
     ? postImage.childImageSharp.resize.src
     : site.siteMetadata.siteImage
+  const absoluteImage = `${site.siteMetadata.siteUrl}/${image}`
   const url = site.siteMetadata.siteUrl + postSlug
 
   return (
@@ -72,7 +73,7 @@ const SEO = ({ data }) => {
         },
         {
           property: `og:image`,
-          content: image,
+          content: absoluteImage,
         },
         {
           property: `og:type`,
@@ -84,7 +85,7 @@ const SEO = ({ data }) => {
         },
         {
           name: `twitter:image`,
-          content: image,
+          content: absoluteImage,
         },
         {
           name: `twitter:site`,
