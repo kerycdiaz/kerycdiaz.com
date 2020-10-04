@@ -5,6 +5,14 @@ const InstagramIcon = require('@material-ui/icons/Instagram').default
 const FacebookIcon = require('@material-ui/icons/Facebook').default
 
 const config = {
+  infoTitle: 'Keryc Díaz',
+  infoTitleNote: 'personal blog',
+  infoSocialLinks: [
+    { icon: GitHubIcon, url: 'https://github.com/kerycdiaz' },
+    { icon: LinkedInIcon, url: 'https://linkedin.com/in/kerycdiaz' },
+    { icon: InstagramIcon, url: 'https://instagram.com/kerycdiaz' },
+    { icon: FacebookIcon, url: 'https://facebook.com/kerycdiaz' },
+  ],
   siteMetadata: {
     title: `Keryc Díaz - Experiencias, vivencias y un poco de programación.`,
     author: {
@@ -17,20 +25,6 @@ const config = {
       twitter: `kerycdiaz`,
     },
   },
-  //SEOOOO:
-  // pathPrefix: "",
-  // siteLanguage: "en",
-  // authorTwitterAccount: "greglobinski",
-
-  // info (ver si esto va pa afuera)
-  infoTitle: 'Keryc Díaz',
-  infoTitleNote: 'personal blog',
-  infoSocialLinks: [
-    { icon: GitHubIcon, url: 'https://github.com/kerycdiaz' },
-    { icon: LinkedInIcon, url: 'https://linkedin.com/in/kerycdiaz' },
-    { icon: InstagramIcon, url: 'https://instagram.com/kerycdiaz' },
-    { icon: FacebookIcon, url: 'https://facebook.com/kerycdiaz' },
-  ],
   manifest: {
     name: `Keryc Diaz`,
     short_name: `Keryc D'`,
