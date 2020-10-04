@@ -61,7 +61,7 @@ module.exports = {
         debug: false,
         googleAnalytics: {
           trackingId: 'UA-179150462-1',
-          autoStart: false,
+          autoStart: true,
           anonymize: true,
           controlCookieName: 'gatsby-gdpr-google-analytics',
         },
