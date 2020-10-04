@@ -1,7 +1,7 @@
 export default {
   background: '#ffffff',
   white: '#ffffff',
-  accent: '#709425',
+  accent: '#b4a6ce',
   bright: '#ffffff',
   dark: '#333333',
   gray: '#555555',

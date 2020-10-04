@@ -56,14 +56,11 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: 'gatsby-plugin-gdpr-tracking',
+      resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
-        debug: false,
         googleAnalytics: {
           trackingId: 'UA-179150462-1',
-          autoStart: true,
           anonymize: true,
-          controlCookieName: 'gatsby-gdpr-google-analytics',
         },
         environments: ['production', 'development'],
       },
