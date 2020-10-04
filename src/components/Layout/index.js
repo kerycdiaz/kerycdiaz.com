@@ -28,7 +28,7 @@ const Layout = ({ children, setNavigatorPosition, setNavigatorShape }) => {
       <CookieConsent
         enableDeclineButton
         location="bottom"
-        buttonText="De Acuerdo"
+        buttonText="Aceptar"
         declineButtonText="Rechazar"
         cookieName="gatsby-gdpr-google-analytics"
         style={{ background: "#2d1e48" }}
@@ -36,9 +36,9 @@ const Layout = ({ children, setNavigatorPosition, setNavigatorShape }) => {
         declineButtonStyle={{borderRadius: '5px'}}
       >
         <small>
-          Utilizamos cookies propias y de terceros para mejorar la experiencia
-          de navegación. Si continúa navegando, consideramos que acepta su uso.
-          Puede obtener más información en nuestra{' '}
+          Esta web usa cookies operativas propias que tienen una pura finalidad 
+          funcional y cookies de terceros (tipo analytics) que permiten conocer 
+          sus hábitos de navegación para darle mejores servicios de información{' '}
           <Link to="/cookies-policy" onClick={linkOnClick}>
             Política de Cookies
           </Link>
