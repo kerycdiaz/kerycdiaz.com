@@ -60,6 +60,7 @@ module.exports = {
       options: {
         googleAnalytics: {
           trackingId: 'UA-179150462-1',
+          cookieName: 'gatsby-gdpr-google-analytics',
           anonymize: true,
         },
         environments: ['production', 'development'],
