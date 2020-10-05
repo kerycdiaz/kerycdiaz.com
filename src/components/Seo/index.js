@@ -77,7 +77,7 @@ const SEO = ({ data }) => {
         },
         {
           property: `og:type`,
-          content: isPost ? `article` : `website`,
+          content: `website`,
         },
         {
           name: `twitter:card`,
