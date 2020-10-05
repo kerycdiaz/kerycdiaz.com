@@ -10,6 +10,75 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
+const getSchemaOrgJSONLD = ({
+  isPost,
+  url,
+  title,
+  absoluteImage,
+  description,
+  postDate,
+  extra,
+}) => {
+  const schemaOrgJSONLD = [
+    {
+      '@context': 'http://schema.org',
+      '@type': 'WebSite',
+      url,
+      name: title,
+      alternateName: extra.title,
+    },
+  ]
+
+  return isPost
+    ? [
+        ...schemaOrgJSONLD,
+        {
+          '@context': extra.url,
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              item: {
+                '@id': url,
+                name: title,
+                absoluteImage,
+              },
+            },
+          ],
+        },
+        {
+          '@context': extra.url,
+          '@type': 'BlogPosting',
+          url,
+          name: title,
+          alternateName: extra.title,
+          headline: title,
+          image: {
+            '@type': 'ImageObject',
+            url: absoluteImage,
+          },
+          description,
+          author: {
+            '@type': 'Person',
+            name: extra.author,
+          },
+          publisher: {
+            '@type': 'Organization',
+            url: extra.url,
+            logo: extra.logo,
+            name: extra.author,
+          },
+          mainEntityOfPage: {
+            '@type': 'WebSite',
+            '@id': extra.url,
+          },
+          postDate,
+        },
+      ]
+    : schemaOrgJSONLD
+}
+
 const SEO = ({ data }) => {
   const { site } = useStaticQuery(
     graphql`
@@ -34,6 +103,7 @@ const SEO = ({ data }) => {
   const postTitle = ((data || {}).frontmatter || {}).title
   const postDescription = ((data || {}).frontmatter || {}).description
   const postImage = ((data || {}).frontmatter || {}).imagen
+  const postDate = ((data || {}).frontmatter || {}).date
   const postSlug = ((data || {}).fields || {}).slug || ''
 
   const author = site.siteMetadata.author.name
@@ -46,6 +116,25 @@ const SEO = ({ data }) => {
     : site.siteMetadata.siteImage
   const absoluteImage = `${site.siteMetadata.siteUrl}/${image}`
   const url = site.siteMetadata.siteUrl + postSlug
+
+  const isPost = postTitle ? true : false
+  const alternateName = site.siteMetadata.title
+  const extra = {
+    author,
+    title: site.siteMetadata.title,
+    url: site.siteMetadata.siteUrl,
+    logo: `${site.siteMetadata.siteUrl}/${site.siteMetadata.siteImage}`,
+  }
+  const schemaOrgJSONLD = getSchemaOrgJSONLD({
+    isPost,
+    url,
+    title,
+    alternateName,
+    absoluteImage,
+    description,
+    postDate,
+    extra,
+  })
 
   return (
     <Helmet
@@ -77,7 +166,7 @@ const SEO = ({ data }) => {
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: isPost ? `article` : `website`,
         },
         {
           name: `twitter:card`,
@@ -104,7 +193,11 @@ const SEO = ({ data }) => {
           content: description,
         },
       ]}
-    />
+    >
+      <script type="application/ld+json">
+        {JSON.stringify(schemaOrgJSONLD)}
+      </script>
+    </Helmet>
   )
 }
 
