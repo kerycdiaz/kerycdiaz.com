@@ -151,6 +151,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
+            title: data.siteMetadata.title,
           },
         ],
       },
