@@ -65,7 +65,7 @@ const PostSuscribe = (props) => {
         />
         <Button
           variant="contained"
-          color="primary"
+          color="secondary"
           onClick={(event) => handleSubmit(event)}
         >
           Suscribir

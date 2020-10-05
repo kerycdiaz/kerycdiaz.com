@@ -7,7 +7,7 @@ import ActionsBar from '@components/ActionsBar'
 import InfoBar from '@components/InfoBar'
 import InfoBox from '@components/InfoBox'
 import Navigator from '@components/Navigator'
-
+import { default as GlobalStyle } from '@styles/globals'
 import { setNavigatorPosition, setNavigatorShape } from '@store/actions'
 
 import * as S from './styles'
@@ -20,6 +20,7 @@ const Layout = ({ children, setNavigatorPosition, setNavigatorShape }) => {
 
   return (
     <S.Layout>
+      <GlobalStyle />
       {children}
       <Navigator />
       <ActionsBar />

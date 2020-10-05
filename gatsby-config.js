@@ -48,6 +48,7 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
@@ -60,6 +61,7 @@ module.exports = {
       options: {
         googleAnalytics: {
           trackingId: 'UA-179150462-1',
+          cookieName: 'gatsby-gdpr-google-analytics',
           anonymize: true,
         },
         environments: ['production', 'development'],
@@ -79,19 +81,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: {
-          google: [
-            {
-              family: 'Open Sans',
-              variants: ['300', '400', '600'],
-            },
-          ],
-        },
-      },
-    },
     {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
@@ -150,6 +139,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
+            title: data.siteMetadata.title,
           },
         ],
       },
