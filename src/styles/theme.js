@@ -16,11 +16,6 @@ const theme = createMuiTheme({
     sizes: {
       linesMargin: '20px',
     },
-    fonts: {
-      unstyledFamily: `Arial`,
-      styledFamily: 'Open Sans',
-      styledFonts: '300,400,600',
-    },
   },
   info: {
     colors: {
@@ -68,7 +63,6 @@ const theme = createMuiTheme({
       blockquoteFrame: colors.lightGray,
       link: colors.accent,
       linkHover: colors.dark,
-      fbCommentsColorscheme: 'light',
     },
     sizes: {
       articleMaxWidth: '50em',
@@ -145,10 +139,6 @@ const theme = createMuiTheme({
     action: {
       hover: 'rgba(0, 0, 0, 0.01)',
     },
-  },
-  typography: {
-    fontFamily: `Arial, sans-serif`,
-    fontSize: 16,
   },
 })
 

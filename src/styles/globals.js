@@ -144,7 +144,9 @@ export default createGlobalStyle`
   }
   html {
     box-sizing: border-box;
-    font-family: Open Sans;
+    font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco",
+      "Helvetica Neue", "Helvetica", "Ubuntu", "Roboto", "Noto", "Segoe UI",
+      "Arial", sans-serif;
     line-height: 1.15;
     text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -176,7 +178,7 @@ export default createGlobalStyle`
     position: relative;
   }
   h1, h2, h3 {
-    font-weight: 300;
+    font-weight: 200;
   }
   a {
     color: #b4a6ce;
