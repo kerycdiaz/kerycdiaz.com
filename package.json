@@ -17,7 +17,7 @@
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
-    "@trivago/prettier-plugin-sort-imports": "^1.2.0",
+    "@trivago/prettier-plugin-sort-imports": "^2.0.0",
     "babel-plugin-styled-components": "^1.11.1",
 
     "gatsby": "^2.24.67",
