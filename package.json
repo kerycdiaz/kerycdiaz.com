@@ -24,7 +24,7 @@
     "gatsby-plugin-feed": "^2.13.1",
     "gatsby-plugin-gdpr-cookies": "^1.0.7",
     "gatsby-plugin-mailchimp": "^5.2.2",
-    "gatsby-plugin-manifest": "^2.6.1",
+    "gatsby-plugin-manifest": "^3.3.0",
     "gatsby-plugin-material-ui": "^2.1.10",
     "gatsby-plugin-netlify": "^2.3.16",
     "gatsby-plugin-react-helmet": "^3.10.0",
