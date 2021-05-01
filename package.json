@@ -18,8 +18,7 @@
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@trivago/prettier-plugin-sort-imports": "^2.0.0",
-    "babel-plugin-styled-components": "^1.11.1",
-
+    "babel-plugin-styled-components": "^1.12.1",
     "gatsby": "^2.24.67",
     "gatsby-image": "^2.4.20",
     "gatsby-plugin-feed": "^2.5.13",
@@ -35,7 +34,7 @@
     "gatsby-plugin-styled-components": "^3.3.11",
     "gatsby-remark-copy-linked-files": "^2.3.16",
     "gatsby-remark-images": "^3.3.32",
-    "gatsby-remark-prismjs": "^3.5.15",
+    "gatsby-remark-prismjs": "^3.13.0",
     "gatsby-remark-responsive-iframe": "^2.4.16",
     "gatsby-remark-smartypants": "^2.10.0",
     "gatsby-source-filesystem": "^2.11.1",
