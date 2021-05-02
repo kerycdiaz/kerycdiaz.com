@@ -1,3 +1,4 @@
+import { GatsbyImage } from 'gatsby-plugin-image'
 import React from 'react'
 import LazyLoad from 'react-lazyload'
 import { connect } from 'react-redux'
@@ -46,28 +47,11 @@ const ListItem = ({
                 once={true}
                 offset={100}
               >
-                <picture>
-                  <source
-                    type="image/webp"
-                    srcSet={
-                      post.node.frontmatter.imagen.childImageSharp.resolutions
-                        .srcSetWebp
-                    }
-                  />
-                  <source
-                    srcSet={
-                      post.node.frontmatter.imagen.childImageSharp.resolutions
-                        .srcSet
-                    }
-                  />
-                  <img
-                    src={
-                      post.node.frontmatter.imagen.childImageSharp.resolutions
-                        .src
-                    }
-                    alt=""
-                  />
-                </picture>
+                <GatsbyImage
+                  image={
+                    post.node.frontmatter.imagen.childImageSharp.gatsbyImageData
+                  }
+                />
               </LazyLoad>
             </S.ListImage>
           )}

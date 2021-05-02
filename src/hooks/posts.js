@@ -20,9 +20,7 @@ const usePostsList = () => {
                 description
                 imagen {
                   childImageSharp {
-                    resolutions(width: 90, height: 90) {
-                      ...GatsbyImageSharpResolutions_withWebp_noBase64
-                    }
+                    gatsbyImageData(layout: FIXED, width: 90, height: 90)
                   }
                 }
                 category

@@ -7,5 +7,5 @@ export default {
   gray: '#555555',
   lightGray: '#bbbbbb',
   superLightGray: '#dedede',
-  secondary: '#2d1e48'
+  secondary: '#2d1e48',
 }

@@ -22,8 +22,8 @@ Oh, and here's a great quote from this Wikipedia on
 > firm-textured, round yolk that is bright orange-red in color.
 
 ```javascript
-var lang = /\blang(?:uage)?-(\w+)\b/i;
-var uniqueId = 0;
+var lang = /\blang(?:uage)?-(\w+)\b/i
+var uniqueId = 0
 ```
 
 ![Chinese Salty Egg](./animal.jpg)

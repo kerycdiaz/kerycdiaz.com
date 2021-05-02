@@ -7,8 +7,10 @@ import ActionsBar from '@components/ActionsBar'
 import InfoBar from '@components/InfoBar'
 import InfoBox from '@components/InfoBox'
 import Navigator from '@components/Navigator'
-import { default as GlobalStyle } from '@styles/globals'
+
 import { setNavigatorPosition, setNavigatorShape } from '@store/actions'
+
+import { default as GlobalStyle } from '@styles/globals'
 
 import * as S from './styles'
 
@@ -32,13 +34,17 @@ const Layout = ({ children, setNavigatorPosition, setNavigatorShape }) => {
         buttonText="Aceptar"
         declineButtonText="Rechazar"
         cookieName="gatsby-gdpr-google-analytics"
-        style={{ background: "#2d1e48" }}
-        buttonStyle={{ color: "#2d1e48", background: '#fff', borderRadius: '5px' }}
-        declineButtonStyle={{borderRadius: '5px'}}
+        style={{ background: '#2d1e48' }}
+        buttonStyle={{
+          color: '#2d1e48',
+          background: '#fff',
+          borderRadius: '5px',
+        }}
+        declineButtonStyle={{ borderRadius: '5px' }}
       >
         <small>
-          Esta web usa cookies operativas propias que tienen una pura finalidad 
-          funcional y cookies de terceros (tipo analytics) que permiten conocer 
+          Esta web usa cookies operativas propias que tienen una pura finalidad
+          funcional y cookies de terceros (tipo analytics) que permiten conocer
           sus hábitos de navegación para darle mejores servicios de información{' '}
           <Link to="/cookies-policy" onClick={linkOnClick}>
             Política de Cookies

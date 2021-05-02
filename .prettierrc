@@ -13,4 +13,5 @@
     "^[./]"
   ],
   "importOrderSeparation": true,
+  "experimentalBabelParserPluginsList" : ["jsx", "typescript"]
 }
