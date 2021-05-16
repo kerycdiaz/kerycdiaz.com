@@ -8,7 +8,7 @@ import usePostsList from '@hooks/posts'
 
 import { setCategoryFilter } from '@store/actions'
 
-import * as GS from '../styles'
+import * as Gs from '../styles'
 
 const CategoryFilter = ({ setCategoryFilter }) => {
   const posts = usePostsList()
@@ -47,14 +47,14 @@ const CategoryFilter = ({ setCategoryFilter }) => {
 
   return (
     <nav>
-      <GS.ActionButtom
+      <Gs.ActionButtom
         aria-label="Filter by category"
         aria-haspopup="true"
         onClick={handleClick}
         title="Filter the list by category"
       >
         <FilterListIcon />
-      </GS.ActionButtom>
+      </Gs.ActionButtom>
 
       <Menu
         id="simple-menu"

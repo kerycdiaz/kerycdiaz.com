@@ -4,20 +4,20 @@ import React from 'react'
 import Content from '@components/Content'
 import Layout from '@components/Layout'
 import PageHeader from '@components/PageHeader'
-import SEO from '@components/Seo'
+import Seo from '@components/Seo'
 
-import * as GS from '../styles'
+import * as Gs from '../styles'
 
 const PageTemplate = ({ data }) => {
   const page = data.markdownRemark
   const title = page.frontmatter.title
   return (
     <Layout>
-      <SEO data={page} />
-      <GS.TemplateWrapper>
+      <Seo data={page} />
+      <Gs.TemplateWrapper>
         <PageHeader title={title} />
         <Content html={page.html} />
-      </GS.TemplateWrapper>
+      </Gs.TemplateWrapper>
     </Layout>
   )
 }

@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 import { setFontSizeIncrease } from '@store/actions'
 
-import * as GS from '../styles'
+import * as Gs from '../styles'
 
 const FontSetter = ({ setFontSizeIncrease }) => {
   const [anchorEl, setAnchorEl] = useState(null)
@@ -27,7 +27,7 @@ const FontSetter = ({ setFontSizeIncrease }) => {
   }
   return (
     <nav>
-      <GS.ActionButtom
+      <Gs.ActionButtom
         aria-label="Increase font size"
         aria-owns={anchorEl ? 'long-anchorEl' : null}
         aria-haspopup="true"
@@ -35,7 +35,7 @@ const FontSetter = ({ setFontSizeIncrease }) => {
         title="Change font size"
       >
         <FormatSizeIcon />
-      </GS.ActionButtom>
+      </Gs.ActionButtom>
 
       <Menu
         id="simple-menu"

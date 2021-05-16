@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import Layout from '@components/Layout'
-import SEO from '@components/Seo'
+import Seo from '@components/Seo'
 
 import { setNavigatorPosition } from '@store/actions'
 
@@ -19,7 +19,7 @@ const Index = ({ navigatorPosition, setNavigatorPosition }) => {
 
   return (
     <Layout>
-      <SEO />
+      <Seo />
     </Layout>
   )
 }

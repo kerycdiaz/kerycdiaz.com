@@ -9,4 +9,7 @@ const reducer = combineReducers({ reducers })
 
 const store = () => createStore(reducer, composeWithDevTools(applyMiddleware()))
 
-export default ({ children }) => <Provider store={store()}>{children}</Provider>
+const Store = ({ children }) => {
+	return <Provider store={store()}>{children}</Provider>
+}
+export default Store

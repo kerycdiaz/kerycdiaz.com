@@ -1,4 +1,4 @@
-export default {
+const colors = {
   background: '#ffffff',
   white: '#ffffff',
   accent: '#b4a6ce',
@@ -9,3 +9,4 @@ export default {
   superLightGray: '#dedede',
   secondary: '#2d1e48',
 }
+export default colors

@@ -5,9 +5,9 @@ import Content from '@components/Content'
 import Layout from '@components/Layout'
 import PostFooter from '@components/PostFooter'
 import PostHeader from '@components/PostHeader'
-import SEO from '@components/Seo'
+import Seo from '@components/Seo'
 
-import * as GS from '../styles'
+import * as Gs from '../styles'
 
 const PostTemplate = ({ data }) => {
   const post = data.markdownRemark
@@ -18,8 +18,8 @@ const PostTemplate = ({ data }) => {
   const timeToRead = post.timeToRead
   return (
     <Layout>
-      <SEO data={post} />
-      <GS.TemplateWrapper>
+      <Seo data={post} />
+      <Gs.TemplateWrapper>
         <PostHeader
           title={title}
           subTitle={description}
@@ -33,7 +33,7 @@ const PostTemplate = ({ data }) => {
           title={title}
           subTitle={description}
         />
-      </GS.TemplateWrapper>
+      </Gs.TemplateWrapper>
     </Layout>
   )
 }

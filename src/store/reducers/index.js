@@ -16,7 +16,7 @@ const initialState = {
   categoryFilter: 'all posts',
 }
 
-export default (state = initialState, action) => {
+const Reducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_NAVIGATOR_POSITION:
       return {
@@ -58,3 +58,4 @@ export default (state = initialState, action) => {
       return state
   }
 }
+export default Reducer

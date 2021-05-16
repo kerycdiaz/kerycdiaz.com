@@ -4,8 +4,9 @@ import { ThemeProvider } from 'styled-components'
 
 import theme from '@styles/theme'
 
-export default ({ children }) => (
+const styles = ({ children }) => (
   <MuiThemeProvider theme={theme}>
     <ThemeProvider theme={theme}>{children}</ThemeProvider>
   </MuiThemeProvider>
 )
+export default styles
