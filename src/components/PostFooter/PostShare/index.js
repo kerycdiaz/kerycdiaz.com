@@ -1,4 +1,3 @@
-import { withStyles } from '@material-ui/core/styles'
 import React from 'react'
 import {
   FacebookShareButton,
@@ -13,33 +12,7 @@ import {
 
 import config from '@data/SiteConfig'
 
-const styles = (theme) => ({
-  share: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: '1em 0 0',
-    [`@media (min-width: ${theme.mediaQueryTresholds.M}px)`]: {
-      flexDirection: 'row',
-    },
-  },
-  links: {
-    display: 'flex',
-    flexDirection: 'row',
-    '& .react-share__ShareButton': {
-      margin: '0 .8em',
-      cursor: 'pointer',
-    },
-  },
-  label: {
-    fontSize: '1.2em',
-    margin: '0 1em 1em',
-    [`@media (min-width: ${theme.mediaQueryTresholds.M}px)`]: {
-      margin: '0 1em',
-    },
-  },
-})
+import * as S from './styles'
 
 const PostShare = ({ classes, slug, title, subTitle }) => {
   const url = config.siteMetadata.siteUrl + slug
@@ -47,9 +20,9 @@ const PostShare = ({ classes, slug, title, subTitle }) => {
   const iconSize = 36
 
   return (
-    <div className={classes.share}>
-      <span className={classes.label}>SHARE</span>
-      <div className={classes.links}>
+    <S.PostShare>
+      <S.PostLabel>SHARE</S.PostLabel>
+      <S.PostLinks>
         <FacebookShareButton url={url} quote={`${title} - ${subTitle}`}>
           <FacebookIcon round size={iconSize} />
         </FacebookShareButton>
@@ -62,9 +35,9 @@ const PostShare = ({ classes, slug, title, subTitle }) => {
         <WhatsappShareButton url={url} title={title}>
           <WhatsappIcon round size={iconSize} />
         </WhatsappShareButton>
-      </div>
-    </div>
+      </S.PostLinks>
+    </S.PostShare>
   )
 }
 
-export default withStyles(styles)(PostShare)
+export default PostShare
