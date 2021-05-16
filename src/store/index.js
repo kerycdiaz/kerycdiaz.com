@@ -10,6 +10,6 @@ const reducer = combineReducers({ reducers })
 const store = () => createStore(reducer, composeWithDevTools(applyMiddleware()))
 
 const Store = ({ children }) => {
-	return <Provider store={store()}>{children}</Provider>
+  return <Provider store={store()}>{children}</Provider>
 }
 export default Store
