@@ -9,13 +9,14 @@ exports.createPages = async ({ graphql, actions }) => {
   }
   const postTemplate = path.resolve(templatePath('PostTemplate'))
   const pageTemplate = path.resolve(templatePath('PageTemplate'))
+  const categoryTemplate = path.resolve(templatePath('CategoryTemplate'))
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
+        postsRemark: allMarkdownRemark(
           filter: { fields: { collection: { in: ["posts", "pages"] } } }
           sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
+          limit: 2000
         ) {
           edges {
             node {
@@ -29,6 +30,11 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
+        categoryGroup: allMarkdownRemark(limit: 2000) {
+          group(field: frontmatter___category) {
+            fieldValue
+          }
+        }
       }
     `
   )
@@ -38,7 +44,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Create blog posts and pages.
-  const results = result.data.allMarkdownRemark.edges
+  const results = result.data.postsRemark.edges
 
   results.forEach((result, index, node) => {
     const slug = result.node.fields.slug
@@ -49,6 +55,20 @@ exports.createPages = async ({ graphql, actions }) => {
       component: component,
       context: {
         slug: slug,
+      },
+    })
+  })
+
+  // Extract tag data from query
+  const tags = result.data.categoryGroup.group
+
+  // Make tag pages
+  tags.forEach((category) => {
+    createPage({
+      path: `/category/${_.kebabCase(category.fieldValue)}/`,
+      component: categoryTemplate,
+      context: {
+        category: category.fieldValue,
       },
     })
   })

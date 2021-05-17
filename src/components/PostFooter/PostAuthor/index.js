@@ -6,7 +6,7 @@ import config from '@data/SiteConfig'
 
 import * as S from './styles'
 
-const PostAuthor = ({ classes, author }) => {
+const PostAuthor = ({ author }) => {
   return (
     <S.PostAuthor>
       <S.PostAvatar src={avatar} alt={config.siteMetadata.author.name} />

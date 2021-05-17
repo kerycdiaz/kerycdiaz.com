@@ -16,6 +16,7 @@ const PostTemplate = ({ data }) => {
   const date = post.frontmatter.date
   const slug = post.fields.slug
   const timeToRead = post.timeToRead
+  const category = post.frontmatter.category
   return (
     <Layout>
       <Seo data={post} />
@@ -25,6 +26,7 @@ const PostTemplate = ({ data }) => {
           subTitle={description}
           date={date}
           timeToRead={timeToRead}
+          category={category}
         />
         <Content html={post.html} />
         <PostFooter
@@ -61,6 +63,7 @@ export const pageQuery = graphql`
             }
           }
         }
+        category
       }
     }
   }
