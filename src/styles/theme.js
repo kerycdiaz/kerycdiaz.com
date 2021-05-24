@@ -9,12 +9,12 @@ const theme = createMuiTheme({
       background: colors.background,
       text: colors.dark,
       link: colors.accent,
-      linkHover: Color(colors.accent).lighten(0.1).string(),
+      linkHover: Color(colors.accent).lighten(0.5).string(),
       accent: colors.accent,
       lines: colors.superLightGray,
     },
     sizes: {
-      linesMargin: '20px',
+      linesMargin: '15px',
     },
   },
   info: {
@@ -27,13 +27,13 @@ const theme = createMuiTheme({
       menuLinkHover: colors.accent,
     },
     sizes: {
-      width: 320,
-      headerHeight: 170,
+      width: 415,
+      headerHeight: 210,
     },
     fonts: {
-      boxTitleSize: 1.3,
-      boxTitleSizeM: 1.5,
-      boxTitleSizeL: 1.7,
+      boxTitleSize: 2.3,
+      boxTitleSizeM: 2.5,
+      boxTitleSizeL: 2.7,
     },
   },
   navigator: {

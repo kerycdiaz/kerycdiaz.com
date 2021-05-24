@@ -1,12 +1,10 @@
 const colors = {
   background: '#ffffff',
-  white: '#ffffff',
-  accent: '#b4a6ce',
-  bright: '#ffffff',
+  accent: '#2d1f48',
   dark: '#333333',
   gray: '#555555',
   lightGray: '#bbbbbb',
   superLightGray: '#dedede',
-  secondary: '#2d1e48',
+  secondary: '#000',
 }
 export default colors

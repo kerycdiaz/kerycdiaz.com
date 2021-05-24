@@ -83,7 +83,7 @@ export const Title = styled.h1`
         text-align: center;
     }
     ${InfoBox}.is-aside.open & {
-        top: ${1.9 - theme.info.fonts.boxTitleSizeL}em;
+        top: ${2.4 - theme.info.fonts.boxTitleSizeL}em;
         left: 60%;
         text-align: left;
     }

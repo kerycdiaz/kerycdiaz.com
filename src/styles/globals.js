@@ -181,7 +181,7 @@ export default createGlobalStyle`
     font-weight: 200;
   }
   a {
-    color: #b4a6ce;
+    color: #2d1f48;
     background: transparent;
     font-weight: bold;
     text-decoration: none;
