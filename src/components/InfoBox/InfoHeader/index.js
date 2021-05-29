@@ -2,7 +2,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import React from 'react'
 import { connect } from 'react-redux'
 
-import avatar from '@assets/keryc-diaz.jpg'
+import logo from '@assets/logo-large.png'
 
 import config from '@data/SiteConfig'
 
@@ -19,7 +19,7 @@ const InfoHeader = ({ setNavigatorPosition, setNavigatorShape }) => {
     <S.InfoHeader>
       <S.AvatarLink to="/" title="back to Home page">
         <S.AvatarImg>
-          <img src={avatar} alt="" />
+          <img src={logo} alt="logo" />
         </S.AvatarImg>
       </S.AvatarLink>
       <S.Title>

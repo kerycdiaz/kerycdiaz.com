@@ -4,16 +4,14 @@ import vallarta from '@assets/puerto-vallarta.jpg'
 
 export const InfoBox = styled.aside`
   ${({ theme }) => `  
-    display: none;
-    @media (min-width: 1024px) {
         top: 0;
         left: 0;
-        color: ${theme.info.colors.text};
-        width: ${theme.info.sizes.width}px;
+        color: #fff;
+        width: 100%;
         height: 100%;
         display: block;
         padding: 20px 40px;
-        position: absolute;
+        position: relative;
         background-position: center center !important;
         background-color: transparent !important;
         background-image: url(${vallarta}) !important;
@@ -22,22 +20,12 @@ export const InfoBox = styled.aside`
         :before {
           content:'';
           position: absolute;
-                top: 0;
+          top: 0;
           bottom: 0;
           left: 0;
           right: 0;
-          background-color: rgba(0,0,0,0.6);
+          background-color: rgba(0,0,0,0.8);
         }
-    }
-    :after {
-        top: 20px;
-        right: 0;
-        width: 1px;
-        bottom: 20px;
-        content: "";
-        position: absolute;
-        border-right: 1px solid ${theme.base.colors.lines};
-    }
   `}
 `
 
@@ -48,9 +36,35 @@ export const InfoWrapper = styled.div`
     width: 100%;
     bottom: 0;
     opacity: 1;
-    padding: 0 25px 0;
+    padding: 0 10px 0;
     position: absolute;
     will-change: opacity, bottom;
+
+    @media (min-width: ${theme.mediaQueryTresholds.M}px) {
+      top: 270px;
+      left: 0;
+      width: 100%;
+      bottom: 0;
+      opacity: 1;
+      font-size: 18px;
+      padding: 0 5em 0;
+      position: absolute;
+      will-change: opacity,bottom;
+    }
+    
+    @media (min-width: ${theme.mediaQueryTresholds.L}px) {
+      top: 270px;
+      left: 0;
+      width: 100%;
+      bottom: 0;
+      opacity: 1;
+      font-size: 23px;
+      padding: 0 10em 0;
+      position: absolute;
+      will-change: opacity,bottom;
+    }
+
+
     ${InfoBox}.is-aside.closed & {
       bottom: ${theme.navigator.sizes.closedHeight}px;
     }

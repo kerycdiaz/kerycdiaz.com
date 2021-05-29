@@ -12,23 +12,19 @@ export const InfoHeader = styled.header`
 
 export const AvatarLink = styled(Link)`
   ${({ theme }) => `
-    float: left;
-    margin: 0 12px 0 0;
-    display: block;
-    position: relative;
-    will-change: left, top;
-    @media (min-width: ${theme.mediaQueryTresholds.M}px) {
-        margin: 0 20px 0 0;
-    }
-    @media (min-width: ${theme.mediaQueryTresholds.L}px) {
-        top: 10px;
-        left: 50%;
-        position: absolute;
-        margin-left: -30px;
-        ${InfoBox}.is-aside.open & {
-            top: 0;
-            left: 8%;
-        }
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+
+    ${InfoBox}.is-aside.open & {
+      float: left;
+      margin: 0 12px 0 0;
+      display: block;
+      position: relative;
+      will-change: left, top;
+      text-align: left;
+      top: 0px;
     }
   `}
 `
@@ -36,25 +32,26 @@ export const AvatarLink = styled(Link)`
 export const AvatarImg = styled(Avatar)`
   ${({ theme }) => `
     && {
-        width: 36px;
+        width: 76px;
         border: 1px solid #ddd;
-        height: 36px;
+        height: 76px;
         display: inline-block;
         overflow: hidden;
-        border-radius: 65% 75%;
+        border-radius: 5%;
         img {
             max-width: 100%;
         }
         @media (min-width: ${theme.mediaQueryTresholds.M}px) {
-            width: 44px;
-            height: 44px;
+            width: 84px;
+            height: 84px;
         }
         @media (min-width: ${theme.mediaQueryTresholds.L}px) {
-            width: 60px;
-            height: 60px;
+            width: 100px;
+            height: 100px;
         }
-        :hover {
-            border-radius: 75% 65%;
+        ${InfoBox}.is-aside.open & {
+          width: 60px;
+          height: 60px;
         }
     }
   `}
@@ -66,6 +63,12 @@ export const Title = styled.h1`
     margin: 0;
     font-size: ${theme.info.fonts.boxTitleSize}em;
     will-change: transform, left, top;
+    transform: translate(-50%);
+    text-align: center;
+    top: 145px;
+    left: 50%;
+    position: absolute;
+    font-weight: 700;
     small {
         display: block;
         font-size: .6em;
@@ -75,17 +78,13 @@ export const Title = styled.h1`
         font-size: ${theme.info.fonts.boxTitleSizeM}em;
     }
     @media (min-width: ${theme.mediaQueryTresholds.L}px) {
-        top: 85px;
-        left: 50%;
-        position: absolute;
-        font-size: ${theme.info.fonts.boxTitleSizeL}em;
-        transform: translate(-50%);
-        text-align: center;
+        font-size: ${theme.info.fonts.boxTitleSizeL}em;  
     }
     ${InfoBox}.is-aside.open & {
         top: ${2.4 - theme.info.fonts.boxTitleSizeL}em;
-        left: 60%;
+        left: 65%;
         text-align: left;
+        font-size: 20px;
     }
   `}
 `

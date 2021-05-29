@@ -36,7 +36,7 @@ const ListHeader = ({
         <div dangerouslySetInnerHTML={{ __html: info.node.html }}></div>
       </S.HeaderMobile>
       <S.Closed>
-        <h3>List of posts</h3>
+        <h3>Lista de articulos</h3>
         <S.IconExpand
           aria-label="Expand the list"
           onClick={expandOnClick}

@@ -5,8 +5,8 @@ const InstagramIcon = require('@material-ui/icons/Instagram').default
 const FacebookIcon = require('@material-ui/icons/Facebook').default
 
 const config = {
-  infoTitle: 'Keryc Díaz',
-  infoTitleNote: 'personal blog',
+  infoTitle: 'Aprendamos de arquitectura',
+  infoTitleNote: 'Tú eres el arquitecto de tu propia vida',
   infoSocialLinks: [
     { icon: GitHubIcon, url: 'https://github.com/kerycdiaz' },
     { icon: LinkedInIcon, url: 'https://linkedin.com/in/kerycdiaz' },
@@ -14,7 +14,7 @@ const config = {
     { icon: FacebookIcon, url: 'https://facebook.com/kerycdiaz' },
   ],
   siteMetadata: {
-    title: `Keryc Díaz - Experiencias, vivencias y un poco de programación.`,
+    title: `Keryc Díaz - Arquitecto de software y vida!`,
     author: {
       name: `Keryc Díaz`,
     },
