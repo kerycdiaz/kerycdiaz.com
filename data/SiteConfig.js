@@ -5,8 +5,8 @@ const InstagramIcon = require('@material-ui/icons/Instagram').default
 const FacebookIcon = require('@material-ui/icons/Facebook').default
 
 const config = {
-  infoTitle: 'Aprendamos de arquitectura',
-  infoTitleNote: 'Tú eres el arquitecto de tu propia vida',
+  infoTitle: 'Hora de construir!',
+  infoTitleNote: 'Eres el arquitecto de tu vida!',
   infoSocialLinks: [
     { icon: GitHubIcon, url: 'https://github.com/kerycdiaz' },
     { icon: LinkedInIcon, url: 'https://linkedin.com/in/kerycdiaz' },
