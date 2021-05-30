@@ -10,7 +10,12 @@ const NotFoundPage = () => {
           <h1>Oops!</h1>
         </div>
         <h2>404 - página no encontrada</h2>
-        <p>Lo que buscabas ya no está aquí <span role="img" aria-label="triste">😢</span></p>
+        <p>
+          Lo que buscabas ya no está aquí{' '}
+          <span role="img" aria-label="triste">
+            😢
+          </span>
+        </p>
         <a href="/">Ir al Inicio</a>
       </div>
     </S.NotFound>
