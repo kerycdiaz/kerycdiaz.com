@@ -41,3 +41,9 @@ export const PostBox = styled.div`
   align-items: center;
   flex-dirction: column;
 `
+
+export const SocialIcons = styled.strong`
+  text-align: center;
+  margin-top: 5px;
+  font-size: 11px;
+`

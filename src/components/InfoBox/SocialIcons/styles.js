@@ -10,7 +10,7 @@ export const SocialIcons = styled.div`
 export const IconLink = styled.a`
   ${({ theme }) => `
     display: inline-block;
-    padding: 5px;
+    padding: 2px;
     :hover svg {
         fill: ${theme.info.colors.socialIconsHover};
     }
@@ -21,8 +21,8 @@ export const IconSvg = styled(SvgIcon)`
   ${({ theme }) => `
     && {
         fill: ${theme.info.colors.socialIcons};
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
     }
   `}
 `

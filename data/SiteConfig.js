@@ -3,15 +3,16 @@ const GitHubIcon = require('@material-ui/icons/GitHub').default
 const LinkedInIcon = require('@material-ui/icons/LinkedIn').default
 const InstagramIcon = require('@material-ui/icons/Instagram').default
 const FacebookIcon = require('@material-ui/icons/Facebook').default
+const TwitterIcon = require('@material-ui/icons/Twitter').default
 
 const config = {
   infoTitle: 'Hora de construir!',
   infoTitleNote: 'Eres el arquitecto de tu vida!',
   infoSocialLinks: [
-    { icon: GitHubIcon, url: 'https://github.com/kerycdiaz' },
-    { icon: LinkedInIcon, url: 'https://linkedin.com/in/kerycdiaz' },
     { icon: InstagramIcon, url: 'https://instagram.com/kerycdiaz' },
+    { icon: LinkedInIcon, url: 'https://linkedin.com/in/kerycdiaz' },
     { icon: FacebookIcon, url: 'https://facebook.com/kerycdiaz' },
+    { icon: TwitterIcon, url: 'https://twitter.com/kerycdiaz' },
   ],
   siteMetadata: {
     title: `Keryc Díaz - Arquitecto de software y vida!`,
