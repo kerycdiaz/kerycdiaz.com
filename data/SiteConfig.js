@@ -34,6 +34,6 @@ const config = {
     display: `minimal-ui`,
     icon: `content/assets/logo.png`,
   },
-  contactEmail: 'info@kerycdiaz.com',
+  contactEmail: 'hola@kerycdiaz.com',
 }
 module.exports = config

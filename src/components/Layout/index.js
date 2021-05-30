@@ -29,9 +29,9 @@ const Layout = ({ children, setNavigatorPosition, setNavigatorShape }) => {
         buttonStyle={{
           color: '#2d1e48',
           background: '#fff',
-          borderRadius: '5px',
+          borderRadius: '5%',
         }}
-        declineButtonStyle={{ borderRadius: '5px' }}
+        declineButtonStyle={{ borderRadius: '5%' }}
       >
         <small>
           Esta web usa cookies operativas propias que tienen una pura finalidad

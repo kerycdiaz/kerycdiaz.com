@@ -28,7 +28,7 @@ const Contact = () => {
             ¿Estás pensando en hablar conmigo? Estupendo. Este es lugar perfecto
           </h3>
           Puedes escribirme a través de mi formulario de contacto, enviarme un
-          email a <strong>hola@kerycdiaz.com</strong> o seguirme en mis redes
+          email a <strong>{config.contactEmail}</strong> o seguirme en mis redes
           sociales. Será un placer para mi conversar contigo.
           <SocialIcons />
         </Content>
