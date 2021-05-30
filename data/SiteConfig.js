@@ -1,5 +1,4 @@
 // const colors = require('../src/styles/colors');
-const GitHubIcon = require('@material-ui/icons/GitHub').default
 const LinkedInIcon = require('@material-ui/icons/LinkedIn').default
 const InstagramIcon = require('@material-ui/icons/Instagram').default
 const FacebookIcon = require('@material-ui/icons/Facebook').default
@@ -35,7 +34,6 @@ const config = {
     display: `minimal-ui`,
     icon: `content/assets/logo.png`,
   },
-  // // contact
-  // contactEmail: "john@doe.com",
+  contactEmail: 'info@kerycdiaz.com',
 }
 module.exports = config

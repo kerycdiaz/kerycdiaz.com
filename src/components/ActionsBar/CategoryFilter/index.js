@@ -42,6 +42,7 @@ const CategoryFilter = ({ setCategoryFilter }) => {
 
   const handleFiltering = (e) => {
     const category = e.target.innerText.trim()
+    setCategoryFilter(category)
     if (category === 'all posts') {
       navigate(`/blog`)
     } else {
