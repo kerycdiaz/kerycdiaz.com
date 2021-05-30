@@ -31,7 +31,7 @@ export const ListLink = styled(Link)`
             color: ${theme.navigator.colors.postsListItemLinkHover};
         }
         :hover ${ListImage} {
-            border-radius: 65% 75%;
+          border-radius: 15%;
         }
     }
   `}
@@ -45,7 +45,7 @@ export const ListImage = styled.div`
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
-    border-radius: 75% 65%;
+    border-radius: 5%;
     img {
         width: 100%;
         height: 100%;

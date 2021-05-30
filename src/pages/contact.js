@@ -5,6 +5,7 @@ import Form from '@components/ContactForm'
 import Content from '@components/Content'
 import InfoBar from '@components/InfoBar'
 import InfoBox from '@components/InfoBox'
+import SocialIcons from '@components/InfoBox/SocialIcons'
 import Layout from '@components/Layout'
 import Navigator from '@components/Navigator'
 import PageHeader from '@components/PageHeader'
@@ -23,8 +24,13 @@ const Contact = () => {
       <Gs.TemplateWrapper>
         <PageHeader title="Formulario de Contacto" />
         <Content>
-          No dude en ponerse en contacto conmigo por email:{' '}
-          {config.contactEmail} o utilice el formulario a continuación.
+          <h3>
+            ¿Estás pensando en hablar conmigo? Estupendo. Este es lugar perfecto
+          </h3>
+          Puedes escribirme a través de mi formulario de contacto, enviarme un
+          email a <strong>hola@kerycdiaz.com</strong> o seguirme en mis redes
+          sociales. Será un placer para mi conversar contigo.
+          <SocialIcons />
         </Content>
         <Form />
       </Gs.TemplateWrapper>
