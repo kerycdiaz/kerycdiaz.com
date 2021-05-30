@@ -42,7 +42,7 @@ const TopMenu = ({ setNavigatorPosition, setNavigatorShape }) => {
       }),
     { to: '/contact/', title: 'Contacto', link: 'is-aside' },
   ]
-  const path = window.location.pathname
+  const path = typeof window !== `undefined` ? window.location.pathname : '/'
   return (
     <S.TopMenu>
       <S.MenuWeb path={path}>
