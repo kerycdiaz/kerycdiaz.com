@@ -17,3 +17,7 @@ export const SubmitButton = styled(Button)`
     margin: 15px 0px 16px;
   }
 `
+
+export const HiddenTextField = styled.div`
+  display: none;
+`

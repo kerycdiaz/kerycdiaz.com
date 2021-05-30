@@ -1,33 +1,78 @@
 import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField'
+import MuiAlert from '@material-ui/lab/Alert'
 import React from 'react'
 
 import * as S from './styles'
 
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />
+}
+
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+
 const ContactForm = () => {
+  const [state, setState] = React.useState({})
+  const [message, setMessage] = React.useState(null)
+
+  const handleChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': event.target.getAttribute('name'),
+        ...state,
+      }),
+    })
+      .then(() => {
+        setMessage({ type: 'success', text: 'Mensaje enviado con éxito.' })
+      })
+      .catch((error) => {
+        setMessage({
+          type: 'error',
+          text: 'Ocurrio un error, intente de nuevo.',
+        })
+      })
+  }
+
   return (
     <S.ContactForm>
       <S.Form
-        noValidate
-        name="contact"
+        name="Contact Form"
         method="POST"
         data-netlify="true"
-        data-netlify-recaptcha="true"
+        netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
       >
+        <S.HiddenTextField>
+          <input name="bot-field" />
+          <input type="hidden" name="form-name" value="contact" />
+        </S.HiddenTextField>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
             <TextField
               autoComplete="fname"
-              name="firstName"
+              name="name"
               variant="outlined"
               required
               fullWidth
-              id="firstName"
+              id="name"
               label="Nombre"
+              onChange={handleChange}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
+              type="email"
               variant="outlined"
               required
               fullWidth
@@ -35,6 +80,7 @@ const ContactForm = () => {
               label="Correo electrónico"
               name="email"
               autoComplete="email"
+              onChange={handleChange}
             />
           </Grid>
           <Grid item xs={12}>
@@ -47,10 +93,8 @@ const ContactForm = () => {
               name="message"
               multiline
               rows={4}
+              onChange={handleChange}
             />
-          </Grid>
-          <Grid item xs={12}>
-            <div data-netlify-recaptcha="true"></div>
           </Grid>
         </Grid>
         <S.SubmitButton
@@ -62,6 +106,7 @@ const ContactForm = () => {
           Enviar
         </S.SubmitButton>
       </S.Form>
+      {message && <Alert severity={message.type}>{message.text}</Alert>}
     </S.ContactForm>
   )
 }
