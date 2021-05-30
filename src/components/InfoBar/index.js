@@ -1,6 +1,6 @@
 import React from 'react'
 
-import avatar from '@assets/keryc-diaz.jpg'
+import logo from '@assets/logo.png'
 
 import config from '@data/SiteConfig'
 
@@ -11,7 +11,7 @@ const InfoBar = () => {
   return (
     <S.InfoBar>
       <S.AvatarLink to="/">
-        <S.AvatarImg alt={config.infoTitle} src={avatar} />
+        <S.AvatarImg alt={config.infoTitle} src={logo} />
       </S.AvatarLink>
       <S.Title>
         {config.infoTitle}

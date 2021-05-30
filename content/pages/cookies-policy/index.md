@@ -1,5 +1,6 @@
 ---
 title: Política de Cookies
+hiddeMenu: true
 ---
 
 **¿Qué son las cookies?**

@@ -21,7 +21,6 @@ import * as S from './styles'
 
 const ActionsBar = ({
   navigatorPosition,
-  navigatorShape,
   setNavigatorPosition,
   setNavigatorShape,
   setScrollToTop,
@@ -61,9 +60,7 @@ const ActionsBar = ({
             <HomeIcon />
           </S.ActionButtom>
         </Link>
-        {(navigatorShape === 'open' || navigatorPosition !== 'is-aside') && (
-          <CategoryFilter />
-        )}
+        {navigatorPosition !== 'is-aside' && <CategoryFilter />}
         {/*<S.ActionButtom
           aria-label="Search"
           //onClick={this.searchOnClick}
@@ -103,7 +100,6 @@ const ActionsBar = ({
 const mapStateToProps = (state) => {
   return {
     navigatorPosition: state.reducers.navigatorPosition,
-    navigatorShape: state.reducers.navigatorShape,
     categoryFilter: state.reducers.categoryFilter,
   }
 }

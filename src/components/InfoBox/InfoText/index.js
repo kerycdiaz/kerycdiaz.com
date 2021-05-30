@@ -15,17 +15,19 @@ const Navigator = () => {
     return el.node.frontmatter.title === 'best-article'
   })
   if (!info || !bestArticle) return null
-  return [
-    <S.InfoText dangerouslySetInnerHTML={{ __html: info.node.html }} />,
-    <S.InfoText dangerouslySetInnerHTML={{ __html: bestArticle.node.html }} />,
-    <S.CallToAction>
-      <Link to="/maracaibo-lo-mejor-que-recuerdo">
-        <Button variant="contained" color="primary" to="/contact/">
-          ME GUSTARÍA LEER MÁS...
-        </Button>
-      </Link>
-    </S.CallToAction>,
-  ]
+  return (
+    <S.InfoText>
+      <div dangerouslySetInnerHTML={{ __html: info.node.html }} />
+      <div dangerouslySetInnerHTML={{ __html: bestArticle.node.html }} />
+      <S.CallToAction>
+        <Link to="/maracaibo-lo-mejor-que-recuerdo">
+          <Button variant="contained" color="primary" to="/contact/">
+            ME GUSTARÍA LEER MÁS...
+          </Button>
+        </Link>
+      </S.CallToAction>
+    </S.InfoText>
+  )
 }
 
 export default Navigator

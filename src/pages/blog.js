@@ -8,6 +8,8 @@ import Layout from '@components/Layout'
 import Navigator from '@components/Navigator'
 import Seo from '@components/Seo'
 
+import usePostsList from '@hooks/posts'
+
 import { setNavigatorPosition } from '@store/actions'
 
 const useSingleton = (initializer) => {
@@ -24,7 +26,7 @@ const Index = ({ navigatorPosition, setNavigatorPosition }) => {
   return (
     <Layout>
       <Seo />
-      <Navigator />
+      <Navigator posts={usePostsList()} />
       <ActionsBar />
       <InfoBar />
       <InfoBox />

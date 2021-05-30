@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 
 import logo from '@assets/logo-large.png'
 
+import TopMenu from '@components/InfoBar/TopMenu'
+
 import config from '@data/SiteConfig'
 
 import { setNavigatorPosition, setNavigatorShape } from '@store/actions'
@@ -17,6 +19,9 @@ const InfoHeader = ({ setNavigatorPosition, setNavigatorShape }) => {
 
   return (
     <S.InfoHeader>
+      <S.TopMenu>
+        <TopMenu />
+      </S.TopMenu>
       <S.AvatarLink to="/" title="back to Home page">
         <S.AvatarImg>
           <img src={logo} alt="logo" />

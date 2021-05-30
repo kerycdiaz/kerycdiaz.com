@@ -10,6 +10,8 @@ import Navigator from '@components/Navigator'
 import PageHeader from '@components/PageHeader'
 import Seo from '@components/Seo'
 
+import usePostsList from '@hooks/posts'
+
 import * as Gs from '../styles'
 
 const PageTemplate = ({ data }) => {
@@ -22,7 +24,7 @@ const PageTemplate = ({ data }) => {
         <PageHeader title={title} />
         <Content html={page.html} />
       </Gs.TemplateWrapper>
-      <Navigator />
+      <Navigator posts={usePostsList()} />
       <ActionsBar />
       <InfoBar />
       <InfoBox />

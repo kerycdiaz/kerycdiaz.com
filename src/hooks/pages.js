@@ -12,6 +12,7 @@ const usePagesList = () => {
               }
               frontmatter {
                 title
+                hiddeMenu
                 menuTitle
               }
             }

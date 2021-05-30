@@ -81,10 +81,10 @@ export const Title = styled.h1`
         font-size: ${theme.info.fonts.boxTitleSizeL}em;  
     }
     ${InfoBox}.is-aside.open & {
-        top: ${2.4 - theme.info.fonts.boxTitleSizeL}em;
-        left: 65%;
+        top: ${2.1 - theme.info.fonts.boxTitleSizeL}em;
+        left: 55%;
         text-align: left;
-        font-size: 20px;
+        font-size: 1.5em;
     }
   `}
 `
@@ -100,6 +100,18 @@ export const ExpandButtom = styled(IconButton)`
         ${InfoBox}.is-aside.open & {
             display: block;
         }
+    }
+  `}
+`
+
+export const TopMenu = styled.div`
+  ${({ theme }) => `  
+    position: absolute;
+    color: #fff;
+    right: -2.5em;
+    top: -1em;
+    && button {
+      color: ${theme.info.colors.background} !important;
     }
   `}
 `

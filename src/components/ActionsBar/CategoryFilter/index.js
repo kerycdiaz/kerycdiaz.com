@@ -1,6 +1,7 @@
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import FilterListIcon from '@material-ui/icons/FilterList'
+import { navigate } from 'gatsby'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
@@ -41,8 +42,11 @@ const CategoryFilter = ({ setCategoryFilter }) => {
 
   const handleFiltering = (e) => {
     const category = e.target.innerText.trim()
-    setCategoryFilter(category)
-    handleClose()
+    if (category === 'all posts') {
+      navigate(`/blog`)
+    } else {
+      navigate(`/category/${category}`)
+    }
   }
 
   return (

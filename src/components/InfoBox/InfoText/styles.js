@@ -43,4 +43,5 @@ export const InfoText = styled.div`
 
 export const CallToAction = styled.div`
   text-align: center;
+  margin-top: 10px;
 `

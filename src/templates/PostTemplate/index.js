@@ -11,6 +11,8 @@ import PostFooter from '@components/PostFooter'
 import PostHeader from '@components/PostHeader'
 import Seo from '@components/Seo'
 
+import usePostsList from '@hooks/posts'
+
 import * as Gs from '../styles'
 
 const PostTemplate = ({ data }) => {
@@ -40,7 +42,7 @@ const PostTemplate = ({ data }) => {
           subTitle={description}
         />
       </Gs.TemplateWrapper>
-      <Navigator />
+      <Navigator posts={usePostsList()} />
       <ActionsBar />
       <InfoBar />
       <InfoBox />

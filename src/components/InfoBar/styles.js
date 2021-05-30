@@ -27,7 +27,7 @@ export const InfoBar = styled.aside`
 
 export const AvatarLink = styled(Link)`
   float: left;
-  margin: 13px 0 0 30px;
+  margin: 11px 0 0 30px;
   display: block;
 `
 
@@ -36,7 +36,7 @@ export const AvatarImg = styled(Avatar)`
     width: 36px;
     border: 1px solid #ddd;
     height: 36px;
-    border-radius: 65% 75%;
+    border-radius: 5%;
   }
 `
 

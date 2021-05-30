@@ -30,13 +30,16 @@ const TopMenu = ({ setNavigatorPosition, setNavigatorShape }) => {
 
   const items = [
     { to: '/', title: 'Inicio', link: 'is-feature' },
-    ...pages.map((page) => {
-      const { fields, frontmatter } = page.node
-      const title = frontmatter.menuTitle
-        ? frontmatter.menuTitle
-        : frontmatter.title
-      return { to: fields.slug, title: title, link: 'is-aside' }
-    }),
+    { to: '/blog', title: 'Blog', link: 'is-feature' },
+    ...pages
+      .filter((page) => !page.node.frontmatter.hiddeMenu)
+      .map((page) => {
+        const { fields, frontmatter } = page.node
+        const title = frontmatter.menuTitle
+          ? frontmatter.menuTitle
+          : frontmatter.title
+        return { to: fields.slug, title: title, link: 'is-aside' }
+      }),
     //{ to: '/contact/', title: 'Contacto', link: 'is-aside' },
   ]
 
