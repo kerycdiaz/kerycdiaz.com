@@ -3,14 +3,24 @@ import React from 'react'
 import LazyLoad from 'react-lazyload'
 import { connect } from 'react-redux'
 
-import { setNavigatorPosition, setNavigatorShape } from '@store/actions'
+import {
+  setNavigatorPosition,
+  setNavigatorShape,
+  setCategoryFilter,
+} from '@store/actions'
 
 import * as S from './styles'
 
-const ListItem = ({ post, setNavigatorPosition, setNavigatorShape }) => {
+const ListItem = ({
+  post,
+  setNavigatorPosition,
+  setNavigatorShape,
+  setCategoryFilter,
+}) => {
   const linkOnClick = () => {
     setNavigatorPosition('is-aside')
     setNavigatorShape('closed')
+    setCategoryFilter('all posts')
   }
 
   return (
@@ -52,6 +62,7 @@ const ListItem = ({ post, setNavigatorPosition, setNavigatorShape }) => {
 const mapDispatchToProps = {
   setNavigatorPosition,
   setNavigatorShape,
+  setCategoryFilter,
 }
 
 export default connect(null, mapDispatchToProps)(ListItem)
