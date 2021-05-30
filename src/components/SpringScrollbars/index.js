@@ -13,12 +13,8 @@ class SpringScrollbars extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const {
-      isNavigator,
-      navigatorPosition,
-      scrollToTop,
-      setScrollToTop,
-    } = this.props
+    const { isNavigator, navigatorPosition, scrollToTop, setScrollToTop } =
+      this.props
     if (isNavigator && navigatorPosition !== 'is-featured') {
       return
     }

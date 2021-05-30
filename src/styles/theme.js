@@ -19,21 +19,21 @@ const theme = createMuiTheme({
   },
   info: {
     colors: {
-      text: colors.gray,
+      text: colors.superLightGray,
       background: colors.background,
       socialIcons: colors.lightGray,
-      socialIconsHover: colors.accent,
-      menuLink: colors.gray,
-      menuLinkHover: colors.accent,
+      socialIconsHover: colors.superLightGray,
+      menuLink: colors.lightGray,
+      menuLinkHover: colors.superLightGray,
     },
     sizes: {
       width: 415,
-      headerHeight: 210,
+      headerHeight: 230,
     },
     fonts: {
-      boxTitleSize: 2.3,
-      boxTitleSizeM: 2.5,
-      boxTitleSizeL: 2.7,
+      boxTitleSize: 1.5,
+      boxTitleSizeM: 1.6,
+      boxTitleSizeL: 1.7,
     },
   },
   navigator: {

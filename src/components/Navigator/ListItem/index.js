@@ -7,31 +7,14 @@ import { setNavigatorPosition, setNavigatorShape } from '@store/actions'
 
 import * as S from './styles'
 
-const ListItem = ({
-  post,
-  categoryFilter,
-  setNavigatorPosition,
-  setNavigatorShape,
-}) => {
-  let hidden = false
-
-  if (categoryFilter !== 'all posts') {
-    const category = post.node.frontmatter.category
-    if (category !== categoryFilter) {
-      hidden = true
-    }
-  }
-
+const ListItem = ({ post, setNavigatorPosition, setNavigatorShape }) => {
   const linkOnClick = () => {
     setNavigatorPosition('is-aside')
     setNavigatorShape('closed')
   }
 
   return (
-    <S.ListItem
-      style={{ display: `${hidden ? 'none' : 'block'}` }}
-      key={post.node.fields.slug}
-    >
+    <S.ListItem key={post.node.fields.slug}>
       <S.ListLink
         activeClassName="active"
         to={post.node.fields.slug}
@@ -51,6 +34,7 @@ const ListItem = ({
                   image={
                     post.node.frontmatter.imagen.childImageSharp.gatsbyImageData
                   }
+                  alt={post.node.frontmatter.title}
                 />
               </LazyLoad>
             </S.ListImage>
@@ -65,15 +49,9 @@ const ListItem = ({
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    categoryFilter: state.reducers.categoryFilter,
-  }
-}
-
 const mapDispatchToProps = {
   setNavigatorPosition,
   setNavigatorShape,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListItem)
+export default connect(null, mapDispatchToProps)(ListItem)

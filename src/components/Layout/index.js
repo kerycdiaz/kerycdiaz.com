@@ -3,11 +3,6 @@ import React from 'react'
 import CookieConsent from 'react-cookie-consent'
 import { connect } from 'react-redux'
 
-import ActionsBar from '@components/ActionsBar'
-import InfoBar from '@components/InfoBar'
-import InfoBox from '@components/InfoBox'
-import Navigator from '@components/Navigator'
-
 import { setNavigatorPosition, setNavigatorShape } from '@store/actions'
 
 import { default as GlobalStyle } from '@styles/globals'
@@ -24,10 +19,6 @@ const Layout = ({ children, setNavigatorPosition, setNavigatorShape }) => {
     <S.Layout>
       <GlobalStyle />
       {children}
-      <Navigator />
-      <ActionsBar />
-      <InfoBar />
-      <InfoBox />
       <CookieConsent
         enableDeclineButton
         location="bottom"
@@ -38,9 +29,9 @@ const Layout = ({ children, setNavigatorPosition, setNavigatorShape }) => {
         buttonStyle={{
           color: '#2d1e48',
           background: '#fff',
-          borderRadius: '5px',
+          borderRadius: '5%',
         }}
-        declineButtonStyle={{ borderRadius: '5px' }}
+        declineButtonStyle={{ borderRadius: '5%' }}
       >
         <small>
           Esta web usa cookies operativas propias que tienen una pura finalidad

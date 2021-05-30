@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import vallarta from '@assets/puerto-vallarta.jpg'
+
 export const InfoBox = styled.aside`
   ${({ theme }) => `  
     display: none;
@@ -12,7 +14,20 @@ export const InfoBox = styled.aside`
         display: block;
         padding: 20px 40px;
         position: absolute;
-        background: ${theme.info.colors.background};
+        background-position: center center !important;
+        background-color: transparent !important;
+        background-image: url(${vallarta}) !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+        :before {
+          content:'';
+          position: absolute;
+                top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: rgba(0,0,0,0.6);
+        }
     }
     :after {
         top: 20px;
@@ -33,7 +48,7 @@ export const InfoWrapper = styled.div`
     width: 100%;
     bottom: 0;
     opacity: 1;
-    padding: 0 40px 0;
+    padding: 0 25px 0;
     position: absolute;
     will-change: opacity, bottom;
     ${InfoBox}.is-aside.closed & {

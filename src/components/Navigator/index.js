@@ -3,25 +3,9 @@ import { connect } from 'react-redux'
 
 import List from '@components/Navigator/List'
 
-import usePostsList from '@hooks/posts'
-
 import * as S from './styles'
 
-const Navigator = ({ navigatorPosition, navigatorShape }) => {
-  const posts = usePostsList()
-
-  posts.reduce((list, edge) => {
-    const category = edge.node.frontmatter.category
-    if (category && !~list.indexOf(category)) {
-      return list.concat(edge.node.frontmatter.category)
-    } else {
-      return list
-    }
-  }, [])
-
-  const new_posts = []
-  posts.map((post) => new_posts.push(post))
-
+const Navigator = ({ navigatorPosition, navigatorShape, posts }) => {
   return (
     <S.Navigator
       className={
@@ -29,7 +13,7 @@ const Navigator = ({ navigatorPosition, navigatorShape }) => {
         `${navigatorShape ? navigatorShape : ''}`
       }
     >
-      {posts.length && <List posts={new_posts} />}
+      {posts.length && <List posts={posts} />}
     </S.Navigator>
   )
 }

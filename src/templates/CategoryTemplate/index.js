@@ -1,55 +1,87 @@
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import React from 'react'
+import { connect } from 'react-redux'
 
-const CategoryTemplate = ({ pageContext, data }) => {
+import ActionsBar from '@components/ActionsBar'
+import InfoBar from '@components/InfoBar'
+import InfoBox from '@components/InfoBox'
+import Layout from '@components/Layout'
+import Navigator from '@components/Navigator'
+import Seo from '@components/Seo'
+
+import { setCategoryFilter } from '@store/actions'
+import { setNavigatorPosition } from '@store/actions'
+
+const useSingleton = (initializer) => {
+  React.useState(initializer)
+}
+
+const CategoryTemplate = ({
+  pageContext,
+  navigatorPosition,
+  setCategoryFilter,
+  setNavigatorPosition,
+  data,
+}) => {
   const { category } = pageContext
-  const { edges, totalCount } = data.allMarkdownRemark
-  const categoryHeader = `${totalCount} post${
-    totalCount === 1 ? '' : 's'
-  } tagged with "${category}"`
+  const { edges } = data.allMarkdownRemark
+
+  useSingleton(() => {
+    setCategoryFilter(category)
+    if (navigatorPosition !== 'is-featured') {
+      setNavigatorPosition('is-featured')
+    }
+  })
+
   return (
-    <div>
-      <h1>{categoryHeader}</h1>
-      <ul>
-        {edges.map(({ node }) => {
-          const { slug } = node.fields
-          const { title } = node.frontmatter
-          return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
-          )
-        })}
-      </ul>
-      {/*
-            his links to a page that does not yet exist.
-            You'll come back to it!
-        */}
-      <Link to="/category">All categories</Link>
-    </div>
+    <Layout>
+      <Seo />
+      <Navigator posts={edges} />
+      <ActionsBar />
+      <InfoBar />
+      <InfoBox />
+    </Layout>
   )
 }
 
-export default CategoryTemplate
+const mapStateToProps = (state) => {
+  return {
+    navigatorPosition: state.reducers.navigatorPosition,
+  }
+}
+
+const mapDispatchToProps = {
+  setCategoryFilter,
+  setNavigatorPosition,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CategoryTemplate)
 
 export const pageQuery = graphql`
   query PostsByCategory($category: String) {
     allMarkdownRemark(
-      limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         fields: { collection: { eq: "posts" } }
         frontmatter: { category: { eq: $category } }
       }
     ) {
-      totalCount
       edges {
         node {
+          excerpt
           fields {
             slug
           }
           frontmatter {
+            date(formatString: "MMMM DD, YYYY")
             title
+            description
+            imagen {
+              childImageSharp {
+                gatsbyImageData(layout: FIXED, width: 90, height: 90)
+              }
+            }
+            category
           }
         }
       }

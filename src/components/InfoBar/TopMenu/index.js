@@ -1,3 +1,4 @@
+import ListItem from '@material-ui/core/ListItem'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
@@ -29,49 +30,69 @@ const TopMenu = ({ setNavigatorPosition, setNavigatorShape }) => {
   }
 
   const items = [
-    { to: '/', title: 'Inicio', link: 'is-feature' },
-    ...pages.map((page) => {
-      const { fields, frontmatter } = page.node
-      const title = frontmatter.menuTitle
-        ? frontmatter.menuTitle
-        : frontmatter.title
-      return { to: fields.slug, title: title, link: 'is-aside' }
-    }),
-    //{ to: '/contact/', title: 'Contacto', link: 'is-aside' },
+    { to: '/blog', title: 'Blog', link: 'is-feature' },
+    ...pages
+      .filter((page) => !page.node.frontmatter.hiddeMenu)
+      .map((page) => {
+        const { fields, frontmatter } = page.node
+        const title = frontmatter.menuTitle
+          ? frontmatter.menuTitle
+          : frontmatter.title
+        return { to: fields.slug, title: title, link: 'is-aside' }
+      }),
+    { to: '/contact/', title: 'Contacto', link: 'is-aside' },
   ]
-
+  const path = window.location.pathname
   return (
     <S.TopMenu>
-      <S.MenuIconColor
-        aria-label="More"
-        aria-haspopup="true"
-        onClick={handleClick}
-      >
-        <MoreVertIcon />
-      </S.MenuIconColor>
-
-      <Menu
-        id="simple-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-      >
+      <S.MenuWeb path={path}>
         {items.map((item) => {
           return (
-            <S.MenuItemLink key={item.to} to={item.to}>
-              <MenuItem
+            <S.MenuWebLink key={item.to} to={item.to}>
+              <ListItem
                 onClick={() => {
                   linkOnClick(item.link)
                   handleClose()
                 }}
               >
                 {item.title}
-              </MenuItem>
-            </S.MenuItemLink>
+              </ListItem>
+            </S.MenuWebLink>
           )
         })}
-      </Menu>
+      </S.MenuWeb>
+      <S.MenuMobile path={path}>
+        <S.MenuIconColor
+          aria-label="More"
+          aria-haspopup="true"
+          onClick={handleClick}
+        >
+          <MoreVertIcon />
+        </S.MenuIconColor>
+
+        <Menu
+          id="simple-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        >
+          {items.map((item) => {
+            return (
+              <S.MenuItemLink key={item.to} to={item.to}>
+                <MenuItem
+                  onClick={() => {
+                    linkOnClick(item.link)
+                    handleClose()
+                  }}
+                >
+                  {item.title}
+                </MenuItem>
+              </S.MenuItemLink>
+            )
+          })}
+        </Menu>
+      </S.MenuMobile>
     </S.TopMenu>
   )
 }

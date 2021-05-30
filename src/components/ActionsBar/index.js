@@ -2,7 +2,7 @@ import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward'
 import FullscreenIcon from '@material-ui/icons/Fullscreen'
 import FullscreenExitIcon from '@material-ui/icons/FullscreenExit'
 import HomeIcon from '@material-ui/icons/Home'
-import SearchIcon from '@material-ui/icons/Search'
+// import SearchIcon from '@material-ui/icons/Search'
 import { Link } from 'gatsby'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
@@ -21,7 +21,6 @@ import * as S from './styles'
 
 const ActionsBar = ({
   navigatorPosition,
-  navigatorShape,
   setNavigatorPosition,
   setNavigatorShape,
   setScrollToTop,
@@ -52,7 +51,7 @@ const ActionsBar = ({
   return (
     <S.ActionsBar>
       <S.ActionsGroup>
-        <Link to="/">
+        <Link to="/blog">
           <S.ActionButtom
             aria-label="Back to list"
             onClick={homeOnClick}
@@ -61,9 +60,7 @@ const ActionsBar = ({
             <HomeIcon />
           </S.ActionButtom>
         </Link>
-        {(navigatorShape === 'open' || navigatorPosition !== 'is-aside') && (
-          <CategoryFilter />
-        )}
+        {navigatorPosition !== 'is-aside' && <CategoryFilter />}
         {/*<S.ActionButtom
           aria-label="Search"
           //onClick={this.searchOnClick}
@@ -103,7 +100,6 @@ const ActionsBar = ({
 const mapStateToProps = (state) => {
   return {
     navigatorPosition: state.reducers.navigatorPosition,
-    navigatorShape: state.reducers.navigatorShape,
     categoryFilter: state.reducers.categoryFilter,
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import LandingPage from '@components/LandingPage'
 import Layout from '@components/Layout'
 import Seo from '@components/Seo'
 
@@ -20,6 +21,7 @@ const Index = ({ navigatorPosition, setNavigatorPosition }) => {
   return (
     <Layout>
       <Seo />
+      <LandingPage />
     </Layout>
   )
 }

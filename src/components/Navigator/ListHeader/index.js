@@ -1,5 +1,6 @@
 import CloseIcon from '@material-ui/icons/Close'
 import ExpandLessIcon from '@material-ui/icons/ExpandLess'
+import { navigate } from 'gatsby'
 import React from 'react'
 import { forceCheck } from 'react-lazyload'
 import { connect } from 'react-redux'
@@ -12,7 +13,6 @@ import * as S from './styles'
 
 const ListHeader = ({
   categoryFilter,
-  navigatorShape,
   setNavigatorShape,
   setCategoryFilter,
 }) => {
@@ -23,6 +23,7 @@ const ListHeader = ({
 
   const removefilterOnClick = () => {
     setCategoryFilter('all posts')
+    navigate('/blog')
   }
 
   const parts = usePartsList()
@@ -36,7 +37,7 @@ const ListHeader = ({
         <div dangerouslySetInnerHTML={{ __html: info.node.html }}></div>
       </S.HeaderMobile>
       <S.Closed>
-        <h3>List of posts</h3>
+        <h3>Lista de articulos</h3>
         <S.IconExpand
           aria-label="Expand the list"
           onClick={expandOnClick}
@@ -47,7 +48,7 @@ const ListHeader = ({
       </S.Closed>
       {categoryFilter !== 'all posts' && (
         <S.Filter>
-          <small>Active category filter:</small>{' '}
+          <small>Artículos de la categoría:</small>{' '}
           <strong>{categoryFilter}</strong>
           <S.IconClear
             aria-label="Remove filtering"
@@ -65,7 +66,6 @@ const ListHeader = ({
 const mapStateToProps = (state) => {
   return {
     categoryFilter: state.reducers.categoryFilter,
-    navigatorShape: state.reducers.navigatorShape,
   }
 }
 

@@ -1,10 +1,16 @@
 import { graphql } from 'gatsby'
 import React from 'react'
 
+import ActionsBar from '@components/ActionsBar'
 import Content from '@components/Content'
+import InfoBar from '@components/InfoBar'
+import InfoBox from '@components/InfoBox'
 import Layout from '@components/Layout'
+import Navigator from '@components/Navigator'
 import PageHeader from '@components/PageHeader'
 import Seo from '@components/Seo'
+
+import usePostsList from '@hooks/posts'
 
 import * as Gs from '../styles'
 
@@ -18,6 +24,10 @@ const PageTemplate = ({ data }) => {
         <PageHeader title={title} />
         <Content html={page.html} />
       </Gs.TemplateWrapper>
+      <Navigator posts={usePostsList()} />
+      <ActionsBar />
+      <InfoBar />
+      <InfoBox />
     </Layout>
   )
 }
