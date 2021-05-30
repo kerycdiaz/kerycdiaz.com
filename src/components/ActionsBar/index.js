@@ -2,7 +2,7 @@ import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward'
 import FullscreenIcon from '@material-ui/icons/Fullscreen'
 import FullscreenExitIcon from '@material-ui/icons/FullscreenExit'
 import HomeIcon from '@material-ui/icons/Home'
-import SearchIcon from '@material-ui/icons/Search'
+// import SearchIcon from '@material-ui/icons/Search'
 import { Link } from 'gatsby'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
@@ -51,7 +51,7 @@ const ActionsBar = ({
   return (
     <S.ActionsBar>
       <S.ActionsGroup>
-        <Link to="/">
+        <Link to="/blog">
           <S.ActionButtom
             aria-label="Back to list"
             onClick={homeOnClick}

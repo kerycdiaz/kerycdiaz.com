@@ -1,5 +1,5 @@
 ---
-title: Desde mi Ranchito a la Ciudad
+title: Desde el ranchito a la ciudad.
 menuTitle: Sobre Mí
 ---
 
