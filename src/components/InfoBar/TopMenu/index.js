@@ -5,15 +5,11 @@ import MoreVertIcon from '@material-ui/icons/MoreVert'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
-import usePagesList from '@hooks/pages'
-
 import { setNavigatorPosition, setNavigatorShape } from '@store/actions'
 
 import * as S from './styles'
 
 const TopMenu = ({ setNavigatorPosition, setNavigatorShape }) => {
-  const pages = usePagesList()
-
   const [anchorEl, setAnchorEl] = useState(null)
 
   const handleClick = (event) => {
@@ -31,15 +27,7 @@ const TopMenu = ({ setNavigatorPosition, setNavigatorShape }) => {
 
   const items = [
     { to: '/blog', title: 'Blog', link: 'is-feature' },
-    ...pages
-      .filter((page) => !page.node.frontmatter.hiddeMenu)
-      .map((page) => {
-        const { fields, frontmatter } = page.node
-        const title = frontmatter.menuTitle
-          ? frontmatter.menuTitle
-          : frontmatter.title
-        return { to: fields.slug, title: title, link: 'is-aside' }
-      }),
+    { to: '/sobre-mi', title: 'Sobre Mí', link: 'is-aside' },
     { to: '/contact/', title: 'Contacto', link: 'is-aside' },
   ]
   const path = typeof window !== `undefined` ? window.location.pathname : '/'

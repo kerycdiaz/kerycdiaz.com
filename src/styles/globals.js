@@ -197,4 +197,7 @@ export default createGlobalStyle`
     text-shadow: none;
     border-radius: 2px;
   }
+  ul {
+    margin-top: -1em;
+  }
 `

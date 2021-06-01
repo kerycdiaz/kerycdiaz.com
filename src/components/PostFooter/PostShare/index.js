@@ -21,7 +21,7 @@ const PostShare = ({ classes, slug, title, subTitle }) => {
 
   return (
     <S.PostShare>
-      <S.PostLabel>SHARE</S.PostLabel>
+      <S.PostLabel>COMPARTIR</S.PostLabel>
       <S.PostLinks>
         <FacebookShareButton url={url} quote={`${title} - ${subTitle}`}>
           <FacebookIcon round size={iconSize} />

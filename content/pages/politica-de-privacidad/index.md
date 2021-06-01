@@ -1,6 +1,5 @@
 ---
 title: Política de Privacidad
-hiddeMenu: true
 ---
 
 ## PRIVACIDAD
@@ -80,4 +79,4 @@ Keryc Díaz podrá modificar la presente Política de Privacidad en cualquier mo
 
 La presente Política de Privacidad se encuentra actualizada a fecha 01/06/2021 Keryc Díaz (México). Reservados todos los derechos.
 
-Si lo deseas también puedes consultar nuestra **[Política de Cookies](https://kerycdiaz.com/cookies-policy/)**
+Si lo deseas también puedes consultar nuestra **[Política de Cookies](https://kerycdiaz.com/politica-de-cookies/)**

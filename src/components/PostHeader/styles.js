@@ -22,21 +22,6 @@ export const HeaderTitle = styled.h1`
   `}
 `
 
-export const HeaderSubTitle = styled.h2`
-  ${({ theme }) => `
-    color: ${theme.main.colors.subTitle};
-    font-size: ${theme.main.fonts.subTitle.size}em;
-    font-weight: ${theme.main.fonts.subTitle.lineHeight};
-    line-height: 1.1;
-    @media (min-width: ${theme.mediaQueryTresholds.M}px) {
-        font-size: ${theme.main.fonts.title.sizeM}em;
-    }
-    @media (min-width: ${theme.mediaQueryTresholds.L}px) {
-        font-size: ${theme.main.fonts.title.sizeL}em;
-    }
-  `}
-`
-
 export const HeaderDate = styled.div`
   ${({ theme }) => `
     color: ${theme.main.colors.meta};

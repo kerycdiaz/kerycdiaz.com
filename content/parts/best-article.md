@@ -6,4 +6,4 @@ title: best-article
 > donde casi todos los días caen relámpagos. Así es, este
 > fenómeno se ubica en la ciudad de **Maracaibo**, la ciudad
 > donde nací, allí tuve muchas experiencias increíbles.
-> ¿Quieres saber un poco mas?
+> ¿Quieres saber un poco más?

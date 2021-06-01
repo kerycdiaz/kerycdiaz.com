@@ -2,4 +2,4 @@
 title: author
 ---
 
-**Lorem Ipsum** es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500
+**Keryc Díaz:** Ingeniero de Software en constante crecimiento. Me apasiona ser autodidacta. Todo lo que he aprendido ha sido pasar horas frente al ordenador, aprendiendo tendencias y buscando enseñar a quien pueda lo aprendido. **LA MEJOR FORMA DE APRENDER EN ENSEÑANDO.**

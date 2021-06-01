@@ -29,7 +29,7 @@ const Contact = () => {
           </h3>
           Puedes escribirme a través de mi formulario de contacto, enviarme un
           email a <strong>{config.contactEmail}</strong> o seguirme en mis redes
-          sociales. Será un placer para mi conversar contigo.
+          sociales. Será un placer para mí conversar contigo.
           <SocialIcons />
         </Content>
         <Form />

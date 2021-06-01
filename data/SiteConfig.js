@@ -5,8 +5,8 @@ const FacebookIcon = require('@material-ui/icons/Facebook').default
 const TwitterIcon = require('@material-ui/icons/Twitter').default
 
 const config = {
-  infoTitle: 'Hora de construir!',
-  infoTitleNote: 'Eres el arquitecto de tu vida!',
+  infoTitle: '¡Hora de construir!',
+  infoTitleNote: '¡Eres el arquitecto de tu vida!',
   infoSocialLinks: [
     { icon: InstagramIcon, url: 'https://instagram.com/kerycdiaz' },
     { icon: LinkedInIcon, url: 'https://linkedin.com/in/kerycdiaz' },
@@ -14,7 +14,7 @@ const config = {
     { icon: TwitterIcon, url: 'https://twitter.com/kerycdiaz' },
   ],
   siteMetadata: {
-    title: `Keryc Díaz - Arquitecto de software y vida!`,
+    title: `Keryc Díaz - Arquitecto de software y vida.`,
     author: {
       name: `Keryc Díaz`,
     },

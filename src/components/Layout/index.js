@@ -37,7 +37,7 @@ const Layout = ({ children, setNavigatorPosition, setNavigatorShape }) => {
           Esta web usa cookies operativas propias que tienen una pura finalidad
           funcional y cookies de terceros (tipo analytics) que permiten conocer
           sus hábitos de navegación para darle mejores servicios de información{' '}
-          <Link to="/cookies-policy" onClick={linkOnClick}>
+          <Link to="/politica-de-cookies" onClick={linkOnClick}>
             Política de Cookies
           </Link>
         </small>

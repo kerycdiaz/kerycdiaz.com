@@ -1,6 +1,5 @@
 ---
 title: Política de Cookies
-hiddeMenu: true
 ---
 
 ## Política de Cookies

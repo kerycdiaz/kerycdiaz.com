@@ -1,6 +1,5 @@
 ---
 title: Aviso Legal
-hiddeMenu: true
 ---
 
 ## Aviso legal y términos de uso
