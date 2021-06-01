@@ -76,14 +76,11 @@ const ActionsBar = ({
         {navigatorPosition === 'is-aside' && (
           <FontSetter increaseFont={fontSetterOnClick} />
         )}
-        {screenfull.isEnabled && (
-          <S.ActionButtom
-            aria-label="Fullscreen"
-            onClick={fullscreenOnClick}
-            title="Fullscreen mode"
-          >
-            {fullscreen ? <FullscreenExitIcon /> : <FullscreenIcon />}
-          </S.ActionButtom>
+        {screenfull.isEnabled && fullscreen && (
+          <FullscreenExitIcon onClick={fullscreenOnClick} />
+        )}
+        {screenfull.isEnabled && !fullscreen && (
+          <FullscreenIcon onClick={fullscreenOnClick} />
         )}
         <S.ActionButtom
           aria-label="Back to top"
